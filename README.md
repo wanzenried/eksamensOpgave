@@ -1,2 +1,2 @@
 # eksamensOpgave
-mr Mancini og Richard's eksamensopgave
+Mr Mancini og Richard's eksamensopgave
