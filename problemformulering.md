@@ -10,6 +10,7 @@ Vi har valgt at rekreere super mario bros fra 1985<br/>
 ![ Her burde der være et billede af første bane fra super mario bros](smb1-1.jpg "Første bane fra super mario bros") <br/>
 *Første bane fra __SUPER MARIO BROS__, billedet er delt i tre for lettere at vise det* <br/>
 
+### beskrivelse af Super Mario Bros:
 I Super Mario Bros., spiller man som Mario, seriens hovedperson. Målet er at komme gennem _Mushroom Kingdom_, besejre bowser og hans undersåtter for til sidst at redde Prinsesse Toadstool. Spillet er en sidescrollende platformer; spilleren bevæger sig fra venstre side af skærmen til højre for at nå til flagstangen i slutningen af ​​hver bane.
 
 Spillets verden har mønter spredt rundt som Mario kan samle og specielle kasser markeret med et spørgsmålstegn (?), som kan afsløre flere mønter eller en speciel vare når Mario rammer den nedefra. Andre "hemmeligheder", ofte usynlige, kasser kan indeholde flere mønter eller sjældne genstande. Hvis spilleren får en _magic mushroom_, vokser Mario til at dobblet sin størrelse og får evnen til at bryde kasser over Mario. Hvis Mario bliver ramt i denne tilstand, vender han tilbage til almindelige Mario i stedet for at dø. Spillere starter med et vist antal liv og kan få flere liv ved at finde grøne _1-up mushrooms_ skjult i kasser eller ved at samle 100 mønter. Der mistes et liv, hvis Mario tager skade, imens han er lille, falder i et bundløst hul eller løber tør for tid. Spillet slutter, når spilleren løber tør for liv.
