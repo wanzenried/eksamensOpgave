@@ -7,6 +7,7 @@ Lav en rekreation af en arkade klassiker ved hjælp af programmering. Ved mere k
 
 
 Vi har valgt at rekreere super mario bros fra 1985<br/>
+![ Her burde der være et billede af første bane fra super mario bros](smb1-1.jpg "Første bane fra super mario bros") <br/>
 Spillet går
 
 
