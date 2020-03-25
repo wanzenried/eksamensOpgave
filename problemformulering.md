@@ -25,35 +25,49 @@ Marios primære angreb er at lande oven på fjender, de forskellige fjender i sp
   * blocks man smadre
   * block med powerups
   * man dør hvis man falder i hullerne
-* lave en kontrollerbar spillerkarakter ![][smallmario]
+* lave en kontrollerbar spillerkarakter *![][smallmario]*
   * hoppe
   * sidelæns bevægelse
   * kunne falde
   * interagere med fjender
   * interagere med terræn
-  * powerups ![][superMario] ![][fireMario] ![][smallInvincibleMario] ![][invincibleMario]
+  * powerups *![][superMario] ![][fireMario] ![][smallInvincibleMario] ![][invincibleMario]*
 * lave fjender
   * interagere med terræn
   * interagere med spilleren
-  * Little Goomba ![](https://www.mariowiki.com/images/c/c6/Goomba_SMB.png)
-  * koopa troopas ![](https://www.mariowiki.com/images/e/eb/SMB_NES_Blue_Koopa_Troopa_Walking.gif)
+  * Little Goomba *![her burde der være et billede af en goomba][goomba]*
+  * koopa troopas *![her burde der være et billede af en koopa trooper][koopaTroopa]*
 * lave powerups
-  * magic mushroom ![magic mushroom](https://www.mariowiki.com/images/6/66/SMB_Supermushroom.png)
-  * (evt) fire flower ![](https://www.mariowiki.com/images/b/b3/Fire_Flower_SMB.gif)
-  * (evt) star man ![](https://www.mariowiki.com/images/d/db/Starman.gif)
-  * 1-up mushroom ![](https://www.mariowiki.com/images/0/02/SMB_1-up_Mushroom_Sprite.png)
+  * magic mushroom *![her burde der være et billede af magic mushroom][magicMushroom]*
+  * (evt) fire flower *![her burde der være et billede af fire flower][fireFlower]*
+  * (evt) star man *![her burde der være et billede af star man][starMan]*
+  * 1-up mushroom *![her burde der være et billede af en 1-up][1-up]*
 * level design
   * slutning på banen
   * end castle
 * pointsystem
-  * coins ![coin](https://www.mariowiki.com/images/0/04/SMBCoin.gif)
+  * coins *![her burde der være et billede af coin][coin]*
   * timer
 
 
 * # BUG FIXING
 
+[//]: # "marios forskellige forme"
 [smallMario]: https://www.mariowiki.com/images/0/02/SMB_Smallmario.png
 [superMario]: https://www.mariowiki.com/images/f/f7/SMB_Supermario.png
 [fireMario]: https://www.mariowiki.com/images/4/47/SMB_Firemario.png
 [smallInvincibleMario]: https://www.mariowiki.com/images/f/f8/SmallinvincibleMario.gif
 [invincibleMario]: https://www.mariowiki.com/images/6/62/Invincible_Mario.gif
+
+[//]: # "fjender"
+[goomba]: https://www.mariowiki.com/images/c/c6/Goomba_SMB.png
+[koopaTroopa]: https://www.mariowiki.com/images/e/eb/SMB_NES_Blue_Koopa_Troopa_Walking.gif
+
+[//]: # "powerups"
+[magicMushroom]: https://www.mariowiki.com/images/6/66/SMB_Supermushroom.png
+[fireFlower]: https://www.mariowiki.com/images/b/b3/Fire_Flower_SMB.gif
+[starMan]: https://www.mariowiki.com/images/d/db/Starman.gif
+[1-up]: https://www.mariowiki.com/images/0/02/SMB_1-up_Mushroom_Sprite.png
+
+[//]: # "andre objekter i spillet"
+[coin]: https://www.mariowiki.com/images/0/04/SMBCoin.gif
