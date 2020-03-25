@@ -3,10 +3,10 @@
 Vi har valgt opgave 2: __Arkade__
 
 ##### Opgavebeskrivelse:
-Lav en rekreation af en arkade klassiker ved hjælp af programmering. Ved mere komplicerede spil er det tilladt at lave dele af spillet, men resten skal beskrives f. eks. via flowchart eller lignende for at sikre en samlet forståelse
-
-
-Vi har valgt at rekreere super mario bros fra 1985<br/>
+Lav en rekreation af en arkade klassiker ved hjælp af programmering. Ved mere komplicerede spil er det tilladt at lave dele af spillet, men resten skal beskrives f. eks. via flowchart eller lignende for at sikre en samlet forståelse<br/>
+<br/>
+<br/>
+Vi har valgt at rekreere spillet super mario bros fra 1985<br/>
 ![ Her burde der være et billede af første bane fra super mario bros](smb1-1.jpg "Første bane fra super mario bros") <br/>
 *Første bane fra __SUPER MARIO BROS__, billedet er delt i tre for lettere at vise det* <br/>
 
@@ -18,7 +18,7 @@ Spillets verden har mønter spredt rundt som Mario kan samle og specielle kasser
 Marios primære angreb er at lande oven på fjender, de forskellige fjender i spillet har forskellige reaktioner på dette angreb. For eksempel vil en Goomba flade ud og dø, mens en Koopa Troopa midlertidigt trækker sig ind i sin skal, så Mario kan bruge den som et projektil. Disse skaller kan skade fjender hvis de rammer dem, og hvis de rammer mure vil de bevæge sig tilbage i den retning de kom fra. Hvis disse skaller rammer Mario, vil mario tage skade og miste en _powerup_, hvis Mario ikke har flere, dør Mario. Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flower_ op får Mario mulighed for at kaste ildkugler. _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser. Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
 
-
+### to do for opgaven
 * lave terræn
   * ground
   * trappe ground
