@@ -17,6 +17,11 @@ Spillets verden har mønter spredt rundt som Mario kan samle og specielle kasser
 
 Marios primære angreb er at lande oven på fjender, de forskellige fjender i spillet har forskellige reaktioner på dette angreb. For eksempel vil en Goomba flade ud og dø, mens en Koopa Troopa midlertidigt trækker sig ind i sin skal, så Mario kan bruge den som et projektil. Disse skaller kan skade fjender hvis de rammer dem, og hvis de rammer mure vil de bevæge sig tilbage i den retning de kom fra. Hvis disse skaller rammer Mario, vil mario tage skade og miste en _powerup_, hvis Mario ikke har flere, dør Mario. Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flower_ op får Mario mulighed for at kaste ildkugler. _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser. Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
+### Begrundelse for valg af opgaven
+
+### opgavens omfang
+I denne opgave vil vores primære fokus ligge på at rekreere de forskellige ting man kan i _Super Mario Bros._, samt at rekreere den første bane fra spillet.
+_**Afhængig af projektets størrelse kan det være vi også kommer til at lave flere baner.**_ <(det kan godt være det der skal omformuleres meget)
 
 ### to do for opgaven
 * lave terræn
