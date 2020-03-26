@@ -11,11 +11,25 @@ Vi har valgt at rekreere spillet super mario bros fra 1985<br/>
 *Første bane fra __SUPER MARIO BROS__, billedet er delt i tre for lettere at vise det* <br/>
 
 ### beskrivelse af Super Mario Bros:
-I Super Mario Bros., spiller man som Mario, seriens hovedperson. Målet er at komme gennem _Mushroom Kingdom_, besejre bowser og hans undersåtter for til sidst at redde Prinsesse Toadstool. Spillet er en sidescrollende platformer; spilleren bevæger sig fra venstre side af skærmen til højre for at nå til flagstangen i slutningen af ​​hver bane.
+I Super Mario Bros., spiller man som Mario, seriens hovedperson.
+Målet er at komme gennem _Mushroom Kingdom_, besejre bowser og hans undersåtter for til sidst at redde Prinsesse Toadstool.
+Spillet er en sidescrollende platformer; spilleren bevæger sig fra venstre side af skærmen til højre for at nå til flagstangen i slutningen af ​​hver bane.
 
-Spillets verden har mønter spredt rundt som Mario kan samle og specielle kasser markeret med et spørgsmålstegn (?), som kan afsløre flere mønter eller en speciel vare når Mario rammer den nedefra. Andre "hemmeligheder", ofte usynlige, kasser kan indeholde flere mønter eller sjældne genstande. Hvis spilleren får en _magic mushroom_, vokser Mario til at dobblet sin størrelse og får evnen til at bryde kasser over Mario. Hvis Mario bliver ramt i denne tilstand, vender han tilbage til almindelige Mario i stedet for at dø. Spillere starter med et vist antal liv og kan få flere liv ved at finde grønne _1-up mushrooms_ skjult i kasser eller ved at samle 100 mønter. Der mistes et liv, hvis Mario tager skade, imens han er lille, falder i et bundløst hul eller løber tør for tid. Spillet slutter, når spilleren løber tør for liv.
+Spillets verden har mønter spredt rundt som Mario kan samle og specielle kasser markeret med et spørgsmålstegn (?), som kan afsløre flere mønter eller en speciel vare når Mario rammer den nedefra.
+Andre "hemmeligheder", ofte usynlige, kasser kan indeholde flere mønter eller sjældne genstande.
+Hvis spilleren får en _magic mushroom_, vokser Mario til at dobblet sin størrelse og får evnen til at bryde kasser over Mario.
+Hvis Mario bliver ramt i denne tilstand, vender han tilbage til almindelige Mario i stedet for at dø.
+Spillere starter med et vist antal liv og kan få flere liv ved at finde grønne _1-up mushrooms_ skjult i kasser eller ved at samle 100 mønter.
+Der mistes et liv, hvis Mario tager skade, imens han er lille, falder i et bundløst hul eller løber tør for tid.
+Spillet slutter, når spilleren løber tør for liv.
 
-Marios primære angreb er at lande oven på fjender, de forskellige fjender i spillet har forskellige reaktioner på dette angreb. For eksempel vil en Goomba flade ud og dø, mens en Koopa Troopa midlertidigt trækker sig ind i sin skal, så Mario kan bruge den som et projektil. Disse skaller kan skade fjender hvis de rammer dem, og hvis de rammer mure vil de bevæge sig tilbage i den retning de kom fra. Hvis disse skaller rammer Mario, vil mario tage skade og miste en _powerup_, hvis Mario ikke har flere, dør Mario. Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flower_ op får Mario mulighed for at kaste ildkugler. _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser. Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
+Marios primære angreb er at lande oven på fjender, de forskellige fjender i spillet har forskellige reaktioner på dette angreb.
+For eksempel vil en Goomba flade ud og dø, mens en Koopa Troopa midlertidigt trækker sig ind i sin skal, så Mario kan bruge den som et projektil.
+Disse skaller kan skade fjender hvis de rammer dem, og hvis de rammer mure vil de bevæge sig tilbage i den retning de kom fra.
+Hvis disse skaller rammer Mario, vil mario tage skade og miste en _powerup_, hvis Mario ikke har flere, dør Mario.
+Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flower_ op får Mario mulighed for at kaste ildkugler.
+_Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser.
+Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
 ### Begrundelse for valg af opgaven
 
