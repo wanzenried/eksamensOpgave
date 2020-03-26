@@ -47,7 +47,7 @@ Marios primære angreb er at lande oven på fjender, de forskellige fjender i sp
   * slutning på banen
   * end castle
 * pointsystem
-  * coins *![her burde der være et billede af coin][coin]*
+  * coins *![her burde der være et billede af en coin][coin]*
   * timer
 
 
