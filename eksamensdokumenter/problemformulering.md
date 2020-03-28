@@ -31,6 +31,12 @@ Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flo
 _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser.
 Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
+### opgavens omfang
+I denne opgave vil vores primære fokus ligge på at rekreere de forskellige ting man kan i _Super Mario Bros._, samt at rekreere den første bane fra spillet.
+_**Afhængig af projektets størrelse kan det være vi også kommer til at lave flere baner.**_ <(det kan godt være det der skal omformuleres meget)
+
+### Den individuelle eksaminands fokus
+Verdens bedste tekst, lige her
 
 ### to do for opgaven
 * lave terræn
