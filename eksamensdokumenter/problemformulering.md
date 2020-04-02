@@ -9,6 +9,8 @@ Lav en rekreation af en arkade klassiker ved hjælp af programmering. Ved mere k
 Vi har valgt at rekreere spillet super mario bros fra 1985<br/>
 ![ Her burde der være et billede af første bane fra super mario bros](smb1-1.jpg "Første bane fra super mario bros") <br/>
 *Første bane fra __SUPER MARIO BROS__, billedet er delt i tre for lettere at vise det* <br/>
+![](https://img2.thejournal.ie/inline/2322687/original/?width=501&version=2322687) <br/>
+*Animation af spillet i aktion* </br>
 
 ### beskrivelse af Super Mario Bros:
 I Super Mario Bros., spiller man som Mario, seriens hovedperson.
@@ -32,8 +34,8 @@ _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer viss
 Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
 ### opgavens omfang
-I denne opgave vil vores primære fokus ligge på at rekreere de forskellige ting man kan i _Super Mario Bros._, samt at rekreere den første bane fra spillet.
-_**Afhængig af projektets størrelse kan det være vi også kommer til at lave flere baner.**_ <(det kan godt være det der skal omformuleres meget)
+I denne opgave vil vores primære fokus ligger på at rekreere de forskellige game mecahnics og elemtenter fra _Super Mario Bros._, samt at rekreere den første bane fra spillet.
+Hvis opgavens størrelse skulle vise sig at være mindre end forventet, vil vi udvide opgavebesvarelsen med de eventuelle opgaver beskrevet på vores to do.
 
 ### Den individuelle eksaminands fokus
 Verdens bedste tekst, lige her
