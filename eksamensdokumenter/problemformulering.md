@@ -38,7 +38,11 @@ I denne opgave vil vores primære fokus ligger på at rekreere de forskellige ga
 Hvis opgavens størrelse skulle vise sig at være mindre end forventet, vil vi udvide opgavebesvarelsen med de eventuelle opgaver beskrevet på vores to do.
 
 ### Den individuelle eksaminands fokus
-Verdens bedste tekst, lige her
+For at løse denne opgave har vi fordelt de forskellige gamemechanics og elementer imellem os.
+Eksiminanden Jacob har taget ansvaret for at lave en kontrollerbar spillerkarakter, fjender og et pointsystem.
+Eksiminanden Kristoffer har ansvaret for at lave terræn, powerups og level design.
+Vi har fordelt arbejdet i forhold til størrelsen og kompleksiteten af den enkelte delopgave.
+Den anvarlige eksiminand står for at programmere sine delopgaver, men større problemer vil blive løst i fællesskab.
 
 ### To do for opgaven
 * Lave terræn *__(Kristoffer)__*
@@ -79,7 +83,6 @@ Verdens bedste tekst, lige her
   * Sub-world
   * Ekstra baner
   * Level selector
-
 
 * # BUG FIXING *__(Kristoffer og Jacob)__*
 
