@@ -32,8 +32,8 @@ _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer viss
 Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
 ### opgavens omfang
-I denne opgave vil vores primære fokus ligge på at rekreere de forskellige ting man kan i _Super Mario Bros._, samt at rekreere den første bane fra spillet.
-_**Afhængig af projektets størrelse kan det være vi også kommer til at lave flere baner.**_ <(det kan godt være det der skal omformuleres meget)
+I denne opgave vil vores primære fokus ligger på at rekreere de forskellige game mecahnics og elemtenter fra _Super Mario Bros._, samt at rekreere den første bane fra spillet.
+Hvis opgavens størrelse skulle vise sig at være mindre end forventet, vil vi udvide opgavebesvarelsen med de eventuelle opgaver beskrevet på vores to do.
 
 ### Den individuelle eksaminands fokus
 Verdens bedste tekst, lige her
