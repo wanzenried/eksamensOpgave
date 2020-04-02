@@ -69,9 +69,16 @@ Verdens bedste tekst, lige her
   * slutning på banen
   * end castle
   * (evt) sub-world pipes
+  * (evt) ekstra baner
 * pointsystem *__(Jacob)__*
   * coins *![her burde der være et billede af en coin][coin]*
   * timer
+* eventuelle tilføjelser
+  * fire flower powerup *![her burde der være et billede af fire flower][fireFlower]*
+  * star man powerup *![her burde der være et billede af star man][starMan]*
+  * sub-world
+  * ekstra baner
+  * level selector
 
 
 * # BUG FIXING *__(Kristoffer og Jacob)__*
