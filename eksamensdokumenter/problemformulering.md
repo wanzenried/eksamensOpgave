@@ -46,37 +46,43 @@ Den anvarlige eksiminand står for at programmere sine delopgaver, men større p
 
 ### To do for opgaven
 * Lave terræn *__(Kristoffer)__*
-  * ground
-  * trappe ground
-  * pipes
-  * blocks man smadre
-  * block med powerups
-  * man dør hvis man falder i hullerne
+  * Ground
+  * Trappe ground
+  * Pipes
+  * Blocks man smadre
+  * Block med powerups
+  * Man dør hvis man falder i hullerne
 * Lave en kontrollerbar spillerkarakter *__(Jacob)__* *![][smallmario]*
-  * hoppe
-  * sidelæns bevægelse
-  * kunne falde
-  * interagere med fjender
-  * interagere med terræn
-  * powerups *![][superMario] ![][fireMario] ![][smallInvincibleMario] ![][invincibleMario]*
+  * Hoppe
+  * Sidelæns bevægelse
+  * Kunne falde
+  * Interagere med fjender
+  * Interagere med terræn
+  * Powerups *![][superMario] ![][fireMario] ![][smallInvincibleMario] ![][invincibleMario]*
 * Lave fjender *__(Jacob)__*
-  * interagere med terræn
-  * interagere med spilleren
+  * Interagere med terræn
+  * Interagere med spilleren
   * Little Goomba *![her burde der være et billede af en goomba][goomba]*
-  * koopa troopas *![her burde der være et billede af en koopa trooper][koopaTroopa]*
+  * Koopa troopas *![her burde der være et billede af en koopa trooper][koopaTroopa]*
 * Lave powerups *__(Kristoffer)__*
-  * magic mushroom *![her burde der være et billede af magic mushroom][magicMushroom]*
-  * (evt) fire flower *![her burde der være et billede af fire flower][fireFlower]*
-  * (evt) star man *![her burde der være et billede af star man][starMan]*
+  * Magic mushroom *![her burde der være et billede af magic mushroom][magicMushroom]*
+  * (Evt) fire flower *![her burde der være et billede af fire flower][fireFlower]*
+  * (Evt) star man *![her burde der være et billede af star man][starMan]*
   * 1-up mushroom *![her burde der være et billede af en 1-up][1-up]*
 * Level design *__(Kristoffer)__*
-  * slutning på banen
-  * end castle
-  * (evt) sub-world pipes
+  * Slutning på banen
+  * End castle
+  * (Evt) sub-world pipes
+  * (Evt) ekstra baner
 * Pointsystem *__(Jacob)__*
-  * coins *![her burde der være et billede af en coin][coin]*
-  * timer
-
+  * Coins *![her burde der være et billede af en coin][coin]*
+  * Timer
+* Eventuelle tilføjelser *__(Kristoffer og Jacob)__*
+  * Fire flower powerup *![her burde der være et billede af fire flower][fireFlower]*
+  * Star man powerup *![her burde der være et billede af star man][starMan]*
+  * Sub-world
+  * Ekstra baner
+  * Level selector
 
 * # BUG FIXING *__(Kristoffer og Jacob)__*
 
