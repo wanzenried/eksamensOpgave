@@ -1,4 +1,4 @@
-# problemformulering
+# Problemformulering
 
 Vi har valgt opgave 2: __Arkade__
 
@@ -12,7 +12,7 @@ Vi har valgt at rekreere spillet super mario bros fra 1985<br/>
 ![](https://img2.thejournal.ie/inline/2322687/original/?width=501&version=2322687) <br/>
 *Animation af spillet i aktion* </br>
 
-### beskrivelse af Super Mario Bros:
+### Beskrivelse af Super Mario Bros:
 I Super Mario Bros., spiller man som Mario, seriens hovedperson.
 Målet er at komme gennem _Mushroom Kingdom_, besejre bowser og hans undersåtter for til sidst at redde Prinsesse Toadstool.
 Spillet er en sidescrollende platformer; spilleren bevæger sig fra venstre side af skærmen til højre for at nå til flagstangen i slutningen af ​​hver bane.
@@ -33,43 +33,47 @@ Mario kan finde _fire flower_ i nogle "?" kasser, hvis Mario samler en _fire flo
 _Starman_ er en mere sjælden _powerup_, der ofte findes, når Mario rammer visse skjulte eller usynlige kasser.
 Denne _powerup_ gør Mario midlertidigt uovervindelig og gør Mario i stand til at besejre fjender ved kontakt.
 
-### opgavens omfang
+### Opgavens omfang
 I denne opgave vil vores primære fokus ligger på at rekreere de forskellige game mecahnics og elemtenter fra _Super Mario Bros._, samt at rekreere den første bane fra spillet.
 Hvis opgavens størrelse skulle vise sig at være mindre end forventet, vil vi udvide opgavebesvarelsen med de eventuelle opgaver beskrevet på vores to do.
 
 ### Den individuelle eksaminands fokus
-Verdens bedste tekst, lige her
+For at løse denne opgave har vi fordelt de forskellige gamemechanics og elementer imellem os.
+Eksiminanden Jacob har taget ansvaret for at lave en kontrollerbar spillerkarakter, fjender og et pointsystem.
+Eksiminanden Kristoffer har ansvaret for at lave terræn, powerups og level design.
+Vi har fordelt arbejdet i forhold til størrelsen og kompleksiteten af den enkelte delopgave.
+Den anvarlige eksiminand står for at programmere sine delopgaver, men større problemer vil blive løst i fællesskab.
 
-### to do for opgaven
-* lave terræn *__(Kristoffer)__*
+### To do for opgaven
+* Lave terræn *__(Kristoffer)__*
   * ground
   * trappe ground
   * pipes
   * blocks man smadre
   * block med powerups
   * man dør hvis man falder i hullerne
-* lave en kontrollerbar spillerkarakter *__(Jacob)__* *![][smallmario]*
+* Lave en kontrollerbar spillerkarakter *__(Jacob)__* *![][smallmario]*
   * hoppe
   * sidelæns bevægelse
   * kunne falde
   * interagere med fjender
   * interagere med terræn
   * powerups *![][superMario] ![][fireMario] ![][smallInvincibleMario] ![][invincibleMario]*
-* lave fjender *__(Jacob)__*
+* Lave fjender *__(Jacob)__*
   * interagere med terræn
   * interagere med spilleren
   * Little Goomba *![her burde der være et billede af en goomba][goomba]*
   * koopa troopas *![her burde der være et billede af en koopa trooper][koopaTroopa]*
-* lave powerups *__(Kristoffer)__*
+* Lave powerups *__(Kristoffer)__*
   * magic mushroom *![her burde der være et billede af magic mushroom][magicMushroom]*
   * (evt) fire flower *![her burde der være et billede af fire flower][fireFlower]*
   * (evt) star man *![her burde der være et billede af star man][starMan]*
   * 1-up mushroom *![her burde der være et billede af en 1-up][1-up]*
-* level design *__(Kristoffer)__*
+* Level design *__(Kristoffer)__*
   * slutning på banen
   * end castle
   * (evt) sub-world pipes
-* pointsystem *__(Jacob)__*
+* Pointsystem *__(Jacob)__*
   * coins *![her burde der være et billede af en coin][coin]*
   * timer
 
