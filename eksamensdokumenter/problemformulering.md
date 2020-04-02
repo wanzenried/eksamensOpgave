@@ -9,6 +9,8 @@ Lav en rekreation af en arkade klassiker ved hjælp af programmering. Ved mere k
 Vi har valgt at rekreere spillet super mario bros fra 1985<br/>
 ![ Her burde der være et billede af første bane fra super mario bros](smb1-1.jpg "Første bane fra super mario bros") <br/>
 *Første bane fra __SUPER MARIO BROS__, billedet er delt i tre for lettere at vise det* <br/>
+![](https://img2.thejournal.ie/inline/2322687/original/?width=501&version=2322687) <br/>
+*Animation af spillet i aktion* </br>
 
 ### beskrivelse af Super Mario Bros:
 I Super Mario Bros., spiller man som Mario, seriens hovedperson.
