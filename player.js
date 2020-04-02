@@ -1,11 +1,11 @@
 class player {
-  constructor(location,w,h,speed,powerUpState = "smallMario") {
+  constructor(location, w, h, speed, powerUpState = "smallMario") {
     this.location = location;
     this.width = w;
     this.height = h;
     this.powerUpState = powerUpState;
-    this.acceleration = createVector(0,0);
-    this.velocity = createVector(0,0);
+    this.acceleration = createVector(0, 0);
+    this.velocity = createVector(0, 0);
     this.speed = speed
     this.onGround = false;
   }
@@ -13,7 +13,7 @@ class player {
   update() {
     this.acceleration.add(gravity);
 
-    if(keyIsDown(68)){ // d key
+    if (keyIsDown(68)) { // d key
       this.acceleration.x += this.speed
     }
     if (keyIsDown(65)) { // a key
@@ -37,11 +37,10 @@ class player {
     friction.mult(0.1);
     this.velocity.add(friction);
     this.location.add(this.velocity)
-    if(this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
-    console.log(this.velocity.x);
+    if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
 
-    if(this.location.y > height-this.height){
-      this.location.y = height-this.height;
+    if (this.location.y > height - this.height) {
+      this.location.y = height - this.height;
       this.velocity.y = 0;
       this.onGround = true;
     }
@@ -50,7 +49,7 @@ class player {
     return this;
   }
 
-  jump(){
+  jump() {
     if (this.onGround) {
       this.acceleration.y -= 20;
       this.onGround = false;
@@ -58,8 +57,8 @@ class player {
   }
 
   draw() {
-    fill(255,0,0);
-    rect(this.location.x,this.location.y,this.width,this.height);
+    fill(255, 0, 0);
+    rect(this.location.x, this.location.y, this.width, this.height);
   }
 
 }
