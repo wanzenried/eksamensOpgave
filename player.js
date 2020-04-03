@@ -1,10 +1,11 @@
 class player {
-  constructor(location, w, h, speed, powerUpState = "smallMario") {
+  constructor(location, w, h, speed, maxVelocity, powerUpState = "smallMario") {
     this.location = location;
     this.width = w;
     this.height = h;
     this.powerUpState = powerUpState;
     this.acceleration = createVector(0, 0);
+    this.maxVelocity = maxVelocity;
     this.velocity = createVector(0, 0);
     this.speed = speed
     this.onGround = false;
@@ -36,6 +37,7 @@ class player {
     friction.normalize();
     friction.mult(0.1);
     this.velocity.add(friction);
+    this.velocity.limit(this.maxVelocity);
     this.location.add(this.velocity)
     if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
 
@@ -45,7 +47,7 @@ class player {
       this.onGround = true;
     }
 
-
+console.log(this.velocity);
     return this;
   }
 
