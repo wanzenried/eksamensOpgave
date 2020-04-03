@@ -1,6 +1,7 @@
 class player {
   constructor(location, w, h, speed, maxVelocity, powerUpState = "smallMario") {
     this.location = location;
+    this.lastLocation = location;
     this.width = w;
     this.height = h;
     this.powerUpState = powerUpState;
@@ -46,8 +47,8 @@ class player {
       this.velocity.y = 0;
       this.onGround = true;
     }
+    this.lastLocation = this.location.copy()
 
-console.log(this.velocity);
     return this;
   }
 
@@ -56,6 +57,36 @@ console.log(this.velocity);
       this.acceleration.y -= 20;
       this.onGround = false;
     }
+  }
+
+  //check for collision with any object that has location, width and height
+  //returns which side of the object the collision was on, if any
+  collision(object) {
+    let x1 = object.location.x;
+    let x2 = x1 + object.width;
+    let y1 = object.location.y;
+    let y2 = y1 + object.height;
+
+    let returnParams = {
+      collision: false,
+      top: false,
+      bottom: false,
+      left: false,
+      right: false,
+    };
+
+    if (this.location.x > x1 &&
+      this.location.x < x2 &&
+      this.location.y > y1 &&
+      this.location.y < y2) {
+
+        returnParams.collision = true;
+
+    } else {
+      returnParams.collision = false;
+      return returnParams;
+    }
+
   }
 
   draw() {
