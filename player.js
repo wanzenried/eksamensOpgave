@@ -73,6 +73,8 @@ class player {
       bottom: false,
       left: false,
       right: false,
+      gotox: 0,
+      gotoY: 0
     };
 
     if (this.location.x > x1 &&
