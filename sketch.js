@@ -1,5 +1,6 @@
 let gravity; //add ability to change via config file
 let p;
+let box;
 
 // let sliders = [];
 
@@ -18,6 +19,11 @@ function setup() {
 
 
   p = new player(createVector(100, 100), 10, 30, 1, 20);
+  box = {
+    location : createVector(500,500),
+    width : 100,
+    height : 100
+  };
 }
 
 function draw() {
