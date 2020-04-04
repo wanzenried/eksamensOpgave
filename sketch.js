@@ -16,7 +16,7 @@ function setup() {
 
 
 
-  console.log(width);
+
   p = new player(createVector(100, 100), 10, 30, 1, 20);
 }
 
