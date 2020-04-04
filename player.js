@@ -80,12 +80,13 @@ class player {
       this.location.y > y1 &&
       this.location.y < y2) {
 
-        returnParams.collision = true;
-
-    } else {
-      returnParams.collision = false;
-      return returnParams;
+      returnParams.collision = true;
+      returnParams.top = (this.lastLocation.y < y1);
+      returnParams.left = (this.lastLocation.x < x1);
+      returnParams.right = (this.lastLocation.x > x2);
+      returnParams.bottom = (this.lastLocation.y > y2);
     }
+    return returnParams;
 
   }
 
