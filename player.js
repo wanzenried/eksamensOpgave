@@ -59,39 +59,6 @@ class player {
     }
   }
 
-  //check for collision with any object that has location, width and height
-  //returns which side of the object the collision was on, if any
-  /*collision(object) {
-    let x1 = object.location.x;
-    let x2 = x1 + object.width;
-    let y1 = object.location.y;
-    let y2 = y1 + object.height;
-
-    let returnParams = {
-      collision: false,
-      top: false,
-      bottom: false,
-      left: false,
-      right: false,
-      gotox: 0,
-      gotoY: 0
-    };
-
-    if (this.location.x > x1 &&
-      this.location.x < x2 &&
-      this.location.y > y1 &&
-      this.location.y < y2) {
-
-      returnParams.collision = true;
-      returnParams.top = (this.lastLocation.y < y1);
-      returnParams.left = (this.lastLocation.x < x1);
-      returnParams.right = (this.lastLocation.x > x2);
-      returnParams.bottom = (this.lastLocation.y > y2);
-    }
-    return returnParams;
-
-  }*/
-
   collision(object) {
     //cornerpoints of the characters hitbox
     let l1 = createVector(this.location.x, this.location.y);
