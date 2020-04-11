@@ -1,6 +1,6 @@
 let gravity; //add ability to change via config file
 let p;
-let box;
+let box = [];
 
 // let sliders = [];
 
@@ -19,8 +19,13 @@ function setup() {
 
 
   p = new player(createVector(100, 100), 10, 30, 1, 20);
-  box = {
-    location : createVector(500,500),
+  box[0] = {
+    location : createVector(300,500),
+    width : 100,
+    height : 100
+  };
+  box[1] = {
+    location : createVector(450,400),
     width : 100,
     height : 100
   };
@@ -33,6 +38,9 @@ function draw() {
 
   background(0);
   p.update().draw();
+  rect(box[0].location.x,box[0].location.y,box[0].width,box[0].height);
+  rect(box[1].location.x,box[1].location.y,box[1].width,box[1].height);
+
 }
 
 function keyPressed() {

@@ -42,11 +42,41 @@ class player {
     this.location.add(this.velocity)
     if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
 
+for (var i = 0; i < 2; i++) {
+
+    let t = this.collision(box[i]);
+    if (t.collision) {
+      if (t.top) {
+        this.location.x = t.goToX;
+        this.location.y = t.goToY;
+        this.velocity.y = 0;
+        this.onGround = true;
+      }
+      if (t.bottom) {
+        this.location.x = t.goToX;
+        this.location.y = t.goToY;
+        this.velocity.y = 0;
+
+      }
+      if (t.left || t.right) {
+        this.location.x = t.goToX;
+        this.location.y = t.goToY;
+        this.velocity.x = 0;
+      }
+      break;
+    } else {
+      this.onGround = false;
+    }
+  }
+
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
       this.velocity.y = 0;
       this.onGround = true;
     }
+
+
+
     this.lastLocation = this.location.copy()
 
     return this;
@@ -91,7 +121,7 @@ class player {
       return returnParams;
     }
     //if one of the rectangles is above the other rectangle, they do not touch
-    if (l1.y < r3.y || l3.y < r1.y) {
+    if (l1.y > r3.y || l3.y > r1.y) {
       returnParams.collision = false;
       return returnParams;
     }
@@ -106,7 +136,7 @@ class player {
     if (r2.y < l3.y) {
       returnParams.top = true;
       returnParams.goToX = l1.x;
-      returnParams.goToY = l3 - this.height;
+      returnParams.goToY = l3.y - this.height - 0.01;
       return returnParams;
     }
 
@@ -114,14 +144,14 @@ class player {
     if (l2.y > r3.y) {
       returnParams.bottom = true;
       returnParams.goToX = l1.x;
-      returnParams.goToY = r3.y;
+      returnParams.goToY = r3.y + 0.01;
       return returnParams;
     }
 
     //object left side check:
     if (l3.x > r2.x) {
       returnParams.left = true;
-      returnParams.goToX = l3.x - this.width;
+      returnParams.goToX = l3.x - this.width - 0.01;
       returnParams.goToY = l1.y;
       return returnParams;
     }
@@ -129,7 +159,7 @@ class player {
     //object right side check:
     if (l2.x > r3.x) {
       returnParams.right = true;
-      returnParams.goToX = r3.x;
+      returnParams.goToX = r3.x + 0.01;
       returnParams.goToY = l1.y;
       return returnParams;
     }
