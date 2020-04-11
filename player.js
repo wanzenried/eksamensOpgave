@@ -61,7 +61,7 @@ class player {
 
   //check for collision with any object that has location, width and height
   //returns which side of the object the collision was on, if any
-  collision(object) {
+  /*collision(object) {
     let x1 = object.location.x;
     let x2 = x1 + object.width;
     let y1 = object.location.y;
@@ -89,6 +89,44 @@ class player {
       returnParams.bottom = (this.lastLocation.y > y2);
     }
     return returnParams;
+
+  }*/
+
+  collision(object){
+    let l1 = createVector(this.location.x,this.location.y);
+    let r1 = createVector(l1.x + this.width,l1.y+this.height);
+    let l2 = createVector(object.location.x,object.location.y);
+    let r2 = createVector(l2.x + object.width,l2.y + object.height);
+
+    //create return parameters:
+    let returnParams = {
+      collision: false,
+      top: false,
+      bottom: false,
+      left: false,
+      right: false,
+      goToX: 0,
+      goToY: 0
+    };
+
+    //first check if the two rectangular hitboxes touch:
+
+
+
+    //if one of the rectangles is on the left of the other rectangles, they do not touch
+    if (l1.x > r2.x || l2.x > r1.x) {
+      returnParams.collision = false;
+      return returnParams;
+    }
+    //if one of the rectangles is above the other rectangle, they do not touch
+    if (l1.y < r2.y || l2.y < r1.y) {
+      returnParams.collision = false;
+      return returnParams;
+    }
+
+    //https://www.geeksforgeeks.org/find-two-rectangles-overlap/
+
+    
 
   }
 
