@@ -1,3 +1,6 @@
+//Parent class for all object needed to have physics, easy usage guide can be found here:
+//https://www.w3schools.com/jsref/jsref_class_extends.asp
+
 class PhysicsObject {
   constructor(location,w,h) {
     this.location = location.copy();
