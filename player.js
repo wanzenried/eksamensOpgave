@@ -19,17 +19,9 @@ class player extends PhysicsObject {
     if (keyIsDown(65)) { // a key
       this.acceleration.x -= this.speed
     }
-    // if (keyIsDown(32) && this.onGround) {
-    //   this.acceleration.y -= 20;
-    //   this.onGround = false;
-    // }
     this.velocity.add(this.acceleration);
 
-
-
-
     this.acceleration.mult(0);
-
 
     let friction = this.velocity.copy()
     friction.mult(-1);
@@ -73,8 +65,6 @@ for (var i = 0; i < 2; i++) {
       this.onGround = true;
     }
 
-
-
     this.lastLocation = this.location.copy()
 
     return this;
@@ -86,8 +76,6 @@ for (var i = 0; i < 2; i++) {
       this.onGround = false;
     }
   }
-
-
 
   draw() {
     fill(255, 0, 0);
