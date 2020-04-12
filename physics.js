@@ -9,13 +9,13 @@ class PhysicsObject {
 
   }
   collision(object) {
-    //cornerpoints of the characters hitbox
+    //cornerpoints of the calling objects hitbox
     let l1 = createVector(this.location.x, this.location.y);
     let r1 = createVector(l1.x + this.width, l1.y + this.height);
-    //cornerpoints of the characters hitbox last frame
+    //cornerpoints of the calling objects hitbox last frame
     let l2 = createVector(this.lastLocation.x, this.lastLocation.y);
     let r2 = createVector(l2.x + this.width, l2.y + this.height);
-    //cornerpoints of the objects hitbox
+    //cornerpoints of the object being checkeds hitbox
     let l3 = createVector(object.location.x, object.location.y);
     let r3 = createVector(l3.x + object.width, l3.y + object.height);
 
@@ -32,8 +32,6 @@ class PhysicsObject {
 
     //first check if the two rectangular hitboxes touch:
 
-
-
     //if one of the rectangles is on the left of the other rectangles, they do not touch
     if (l1.x > r3.x || l3.x > r1.x) {
       returnParams.collision = false;
@@ -44,6 +42,8 @@ class PhysicsObject {
       returnParams.collision = false;
       return returnParams;
     }
+
+    //if the above code has not been triggered, then the hitboxes much touch
 
     returnParams.collision = true;
     //website used for understanding the above code:
