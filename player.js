@@ -20,10 +20,12 @@ class player extends PhysicsObject {
     friction.mult(-1);
     friction.normalize();
     friction.mult(0.1);
-    addForce(friction);
+    
+    this.addForce(friction);
+    this.calculate()
 
     this.location.add(this.velocity)
-    if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
+
 
 for (var i = 0; i < 2; i++) {
 
