@@ -18,14 +18,14 @@ function setup() {
 
 
 
-  p = new player(createVector(100, 100), 10, 30, 1, 20);
+  p = new player(createVector(100, 100), unit, unit, 1, 20);
   box[0] = {
-    location: createVector(300, 500),
+    location: createVector(3*unit, 11*unit),
     width: unit,
     height: unit
   };
   box[1] = {
-    location: createVector(450, 400),
+    location: createVector(5*unit, 10*unit),
     width: unit,
     height: unit
   };
@@ -38,6 +38,7 @@ function draw() {
 
   background(0);
   p.update().draw();
+  fill(255,255,0)
   rect(box[0].location.x, box[0].location.y, box[0].width, box[0].height);
   rect(box[1].location.x, box[1].location.y, box[1].width, box[1].height);
 
