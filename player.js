@@ -7,7 +7,7 @@ class player extends PhysicsObject {
   }
 
   update() {
-    this.acceleration.add(gravity);
+    this.addForce(gravity);
 
     if (keyIsDown(68)) { // d key
       this.acceleration.x += this.speed
