@@ -1,13 +1,9 @@
 class player extends PhysicsObject {
   constructor(location, w, h, speed, maxVelocity, powerUpState = "smallMario") {
-    super(location,w,h);
+    super(location,w,h, maxVelocity);
     this.lastLocation = this.location.copy();
     this.powerUpState = powerUpState;
-    this.acceleration = createVector(0, 0);
-    this.maxVelocity = maxVelocity;
-    this.velocity = createVector(0, 0);
     this.speed = speed
-    this.onGround = false;
   }
 
   update() {
@@ -40,7 +36,7 @@ for (var i = 0; i < 2; i++) {
         this.location.x = t.goToX;
         this.location.y = t.goToY;
         this.velocity.y = 0;
-        this.onGround = true;
+        this.falling = false;
       }
       if (t.bottom) {
         this.location.x = t.goToX;
@@ -55,14 +51,14 @@ for (var i = 0; i < 2; i++) {
       }
       break;
     } else {
-      this.onGround = false;
+      this.falling = true;
     }
   }
 
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
       this.velocity.y = 0;
-      this.onGround = true;
+      this.falling = false;
     }
 
     this.lastLocation = this.location.copy()
@@ -71,9 +67,9 @@ for (var i = 0; i < 2; i++) {
   }
 
   jump() {
-    if (this.onGround) {
+    if (!this.falling) {
       this.acceleration.y -= 20;
-      this.onGround = false;
+      this.falling = true;
     }
   }
 
