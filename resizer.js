@@ -1,4 +1,4 @@
-const screenRatio = 16 / 9;
+const screenRatio = 4/3;
 
 function windowSize() {
   if (windowWidth / screenRatio <= windowHeight - 4) {
@@ -14,6 +14,7 @@ function windowSize() {
 
 function windowResized() {
   windowSize()
+  unit = width/16
 }
 
 function border(borderColor, borderThickness) {
