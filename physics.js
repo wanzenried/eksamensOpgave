@@ -2,12 +2,12 @@
 //https://www.w3schools.com/jsref/jsref_class_extends.asp
 
 class PhysicsObject {
-  constructor(location,w,h, maxVelocity) {
+  constructor(location, w, h, maxVelocity) {
     this.location = location.copy();
     this.width = w;
     this.height = h;
-    this.acceleration = createVector(0,0);
-    this.velocity = createVector(0,0);
+    this.acceleration = createVector(0, 0);
+    this.velocity = createVector(0, 0);
     this.maxVelocity = maxVelocity;
 
   }
@@ -92,11 +92,11 @@ class PhysicsObject {
 
   }
 
-  addForce(force){
+  addForce(force) {
     this.acceleration.add(force);
   }
 
-  calculate(){
+  calculate() {
     this.velocity.add(this.acceleration);
     this.velocity.limit(this.maxVelocity);
     this.acceleration.mult(0);
