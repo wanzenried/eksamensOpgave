@@ -15,16 +15,13 @@ class player extends PhysicsObject {
     if (keyIsDown(65)) { // a key
       this.acceleration.x -= this.speed
     }
-    this.velocity.add(this.acceleration);
-
-    this.acceleration.mult(0);
 
     let friction = this.velocity.copy()
     friction.mult(-1);
     friction.normalize();
     friction.mult(0.1);
-    this.velocity.add(friction);
-    this.velocity.limit(this.maxVelocity);
+    addForce(friction);
+
     this.location.add(this.velocity)
     if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
 
