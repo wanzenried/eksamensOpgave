@@ -20,7 +20,7 @@ class player extends PhysicsObject {
     friction.mult(-1);
     friction.normalize();
     friction.mult(0.1);
-    
+
     this.addForce(friction);
     this.calculate()
 
@@ -29,7 +29,7 @@ class player extends PhysicsObject {
 
 for (var i = 0; i < 2; i++) {
 
-    let t = this.collision(box[i]);
+    let t = this.collision(enviroment[i]);
     if (t.collision) {
       if (t.top) {
         this.location.x = t.goToX;
