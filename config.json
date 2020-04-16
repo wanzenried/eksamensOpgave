@@ -7,5 +7,6 @@
     "left": 65,
     "right": 68
   },
-  "playerFriction": 0.1
+  "playerFriction": 0.1,
+  "jumpAcceleration": 20
 }
