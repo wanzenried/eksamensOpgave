@@ -57,10 +57,10 @@ class PhysicsObject {
 
     // new solution:
     let distArr = [];
-    distArr[0] = abs(r1.y-l3.y); // top
-    distArr[1] = abs(r3.y-l1.y); // bottom
-    distArr[2] = abs(r1.x-l3.x); // left
-    distArr[3] = abs(r3.x -l1.x);// right
+    distArr[0] = abs(r1.y - l3.y); // top
+    distArr[1] = abs(r3.y - l1.y); // bottom
+    distArr[2] = abs(r1.x - l3.x); // left
+    distArr[3] = abs(r3.x - l1.x); // right
     let shortest = distArr[0];
     let number = 0;
     for (var i = 0; i < distArr.length; i++) {
@@ -70,7 +70,37 @@ class PhysicsObject {
       }
     }
 
-      //Old solution:
+    switch (number) {
+      case 0: //top
+      returnParams.top = true;
+      returnParams.goToX = l1.x;
+      returnParams.goToY = l3.y - this.height - 0.01;
+      return returnParams;
+        break;
+      case 1: //bottom
+      returnParams.bottom = true;
+      returnParams.goToX = l1.x;
+      returnParams.goToY = r3.y + 0.01;
+      return returnParams;
+        break;
+
+      case 2: //left
+      returnParams.left = true;
+      returnParams.goToX = l3.x - this.width - 0.01;
+      returnParams.goToY = l1.y;
+      return returnParams;
+        break;
+
+      case 3: //right
+      returnParams.right = true;
+      returnParams.goToX = r3.x + 0.01;
+      returnParams.goToY = l1.y;
+      return returnParams;
+        break;
+
+    }
+
+    //Old solution:
     //object top check:
     if (r2.y < l3.y) {
       returnParams.top = true;
