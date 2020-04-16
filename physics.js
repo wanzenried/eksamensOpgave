@@ -72,34 +72,38 @@ class PhysicsObject {
 
     switch (number) {
       case 0: //top
-      returnParams.top = true;
-      returnParams.goToX = l1.x;
-      returnParams.goToY = l3.y - this.height - 0.01;
-      return returnParams;
+        returnParams.top = true;
+        returnParams.goToX = l1.x;
+        returnParams.goToY = l3.y - this.height;
+        return returnParams;
         break;
       case 1: //bottom
-      returnParams.bottom = true;
-      returnParams.goToX = l1.x;
-      returnParams.goToY = r3.y + 0.01;
-      return returnParams;
+        returnParams.bottom = true;
+        returnParams.goToX = l1.x;
+        returnParams.goToY = r3.y;
+        return returnParams;
         break;
 
       case 2: //left
-      returnParams.left = true;
-      returnParams.goToX = l3.x - this.width - 0.01;
-      returnParams.goToY = l1.y;
-      return returnParams;
+        returnParams.left = true;
+        returnParams.goToX = l3.x - this.width;
+        returnParams.goToY = l1.y;
+        return returnParams;
         break;
 
       case 3: //right
-      returnParams.right = true;
-      returnParams.goToX = r3.x + 0.01;
-      returnParams.goToY = l1.y;
-      return returnParams;
+        returnParams.right = true;
+        returnParams.goToX = r3.x;
+        returnParams.goToY = l1.y;
+        return returnParams;
         break;
 
-    }
+      default:
+        returnParams.collision = false;
+        return returnParams;
 
+    }
+/*
     //Old solution:
     //object top check:
     if (r2.y < l3.y) {
@@ -135,7 +139,7 @@ class PhysicsObject {
 
     returnParams.collision = false;
     return returnParams;
-
+*/
 
   }
 
