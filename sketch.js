@@ -57,7 +57,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode == 32) {
+  if (keyCode == config.keys.up) {
     player.jump();
   }
 }

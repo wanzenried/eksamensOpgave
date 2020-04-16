@@ -9,10 +9,10 @@ class Player extends PhysicsObject {
   update() {
     this.addForce(gravity);
 
-    if (keyIsDown(68)) { // d key
+    if (keyIsDown(config.keys.right)) { // d key
       this.acceleration.x += this.speed
     }
-    if (keyIsDown(65)) { // a key
+    if (keyIsDown(config.keys.left)) { // a key
       this.acceleration.x -= this.speed
     }
 
