@@ -86,13 +86,16 @@ class Player extends PhysicsObject {
       if (t.collision) {
         if (t.top) {
           // damage the hostile
+          console.log("hostile takes damage");
         }
         if (t.bottom) {
           // damage the player
+          console.log("player takes damage");
 
         }
         if (t.left || t.right) {
           // damage the player
+          console.log("player takes damage");
         }
         break;
       }
@@ -105,6 +108,7 @@ class Player extends PhysicsObject {
       let t = this.collision(collectibles[i]);
       if(t.collision){
         //collect item / powerup
+        console.log("you touched an item");
       }
     }
   }
