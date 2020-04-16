@@ -55,6 +55,56 @@ class PhysicsObject {
 
     //check which side of the object the character hit:
 
+    // new solution:
+    let distArr = [];
+    distArr[0] = abs(r1.y - l3.y); // top
+    distArr[1] = abs(r3.y - l1.y); // bottom
+    distArr[2] = abs(r1.x - l3.x); // left
+    distArr[3] = abs(r3.x - l1.x); // right
+    let shortest = distArr[0];
+    let number = 0;
+    for (var i = 0; i < distArr.length; i++) {
+      if (distArr[i] < shortest) {
+        shortest = distArr[i];
+        number = i;
+      }
+    }
+
+    switch (number) {
+      case 0: //top
+        returnParams.top = true;
+        returnParams.goToX = l1.x;
+        returnParams.goToY = l3.y - this.height;
+        return returnParams;
+        break;
+      case 1: //bottom
+        returnParams.bottom = true;
+        returnParams.goToX = l1.x;
+        returnParams.goToY = r3.y;
+        return returnParams;
+        break;
+
+      case 2: //left
+        returnParams.left = true;
+        returnParams.goToX = l3.x - this.width;
+        returnParams.goToY = l1.y;
+        return returnParams;
+        break;
+
+      case 3: //right
+        returnParams.right = true;
+        returnParams.goToX = r3.x;
+        returnParams.goToY = l1.y;
+        return returnParams;
+        break;
+
+      default:
+        returnParams.collision = false;
+        return returnParams;
+
+    }
+/*
+    //Old solution:
     //object top check:
     if (r2.y < l3.y) {
       returnParams.top = true;
@@ -89,7 +139,7 @@ class PhysicsObject {
 
     returnParams.collision = false;
     return returnParams;
-
+*/
 
   }
 
