@@ -20,7 +20,7 @@ function setup() {
 
 
 
-  player = new player(createVector(100, 100), unit, unit, 1, 20);
+  player = new Player(createVector(100, 100), unit, unit, 1, 20);
   enviroment[0] = {
     location: createVector(3*unit, 11*unit),
     width: unit,
