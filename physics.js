@@ -55,6 +55,22 @@ class PhysicsObject {
 
     //check which side of the object the character hit:
 
+    // new solution:
+    let distArr = [];
+    distArr[0] = abs(r1.y-l3.y); // top
+    distArr[1] = abs(r3.y-l1.y); // bottom
+    distArr[2] = abs(r1.x-l3.x); // left
+    distArr[3] = abs(r3.x -l1.x);// right
+    let shortest = distArr[0];
+    let number = 0;
+    for (var i = 0; i < distArr.length; i++) {
+      if (distArr[i] < shortest) {
+        shortest = distArr[i];
+        number = i;
+      }
+    }
+
+      //Old solution:
     //object top check:
     if (r2.y < l3.y) {
       returnParams.top = true;
