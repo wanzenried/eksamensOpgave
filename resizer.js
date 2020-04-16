@@ -1,5 +1,5 @@
 //Set Windowratio
-const screenRatio = 4/3;
+const screenRatio = 4 / 3;
 
 function windowSize() {
   //windowHeight is always -4 to avoid scrollbar.
@@ -24,5 +24,5 @@ function windowResized() {
   //calls function to rezise canvas
   windowSize()
   //sets the game unit
-  unit = width/16
+  unit = width / 16
 }
