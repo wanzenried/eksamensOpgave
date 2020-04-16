@@ -1,3 +1,12 @@
+let config;
+
+function preload(){
+  let path = '/config.json';
+  config = loadJSON(path);
+  if (config)
+  console.log("config is loaded");
+}
+
 let gravity; //add ability to change via config file
 let p;
 let box = [];
@@ -6,7 +15,7 @@ let box = [];
 
 function setup() {
   // put setup code here
-  gravity = createVector(0, 1);
+  gravity = createVector(0,config.gravity)
   createCanvas(0, 0)
   windowResized()
   // for (var i = 0; i < 3; i++) {
@@ -17,8 +26,7 @@ function setup() {
 
 
 
-
-  p = new player(createVector(100, 100), unit, unit, 1, 20);
+  p = new player(createVector(100, 100), unit, unit, config.playerSpeed, config.playerMaxVelocity);
   box[0] = {
     location: createVector(3*unit, 11*unit),
     width: unit,
