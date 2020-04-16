@@ -103,43 +103,43 @@ class PhysicsObject {
         return returnParams;
 
     }
-/*
-    //Old solution:
-    //object top check:
-    if (r2.y < l3.y) {
-      returnParams.top = true;
-      returnParams.goToX = l1.x;
-      returnParams.goToY = l3.y - this.height - 0.01;
-      return returnParams;
-    }
+    /*
+        //Old solution:
+        //object top check:
+        if (r2.y < l3.y) {
+          returnParams.top = true;
+          returnParams.goToX = l1.x;
+          returnParams.goToY = l3.y - this.height - 0.01;
+          return returnParams;
+        }
 
-    //object bottom check:
-    if (l2.y > r3.y) {
-      returnParams.bottom = true;
-      returnParams.goToX = l1.x;
-      returnParams.goToY = r3.y + 0.01;
-      return returnParams;
-    }
+        //object bottom check:
+        if (l2.y > r3.y) {
+          returnParams.bottom = true;
+          returnParams.goToX = l1.x;
+          returnParams.goToY = r3.y + 0.01;
+          return returnParams;
+        }
 
-    //object left side check:
-    if (l3.x > r2.x) {
-      returnParams.left = true;
-      returnParams.goToX = l3.x - this.width - 0.01;
-      returnParams.goToY = l1.y;
-      return returnParams;
-    }
+        //object left side check:
+        if (l3.x > r2.x) {
+          returnParams.left = true;
+          returnParams.goToX = l3.x - this.width - 0.01;
+          returnParams.goToY = l1.y;
+          return returnParams;
+        }
 
-    //object right side check:
-    if (l2.x > r3.x) {
-      returnParams.right = true;
-      returnParams.goToX = r3.x + 0.01;
-      returnParams.goToY = l1.y;
-      return returnParams;
-    }
+        //object right side check:
+        if (l2.x > r3.x) {
+          returnParams.right = true;
+          returnParams.goToX = r3.x + 0.01;
+          returnParams.goToY = l1.y;
+          return returnParams;
+        }
 
-    returnParams.collision = false;
-    return returnParams;
-*/
+        returnParams.collision = false;
+        return returnParams;
+    */
 
   }
 
