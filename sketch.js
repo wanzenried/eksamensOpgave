@@ -41,7 +41,6 @@ function draw() {
   fill(255,255,0)
   rect(box[0].location.x, box[0].location.y, box[0].width, box[0].height);
   rect(box[1].location.x, box[1].location.y, box[1].width, box[1].height);
-
 }
 
 function keyPressed() {
