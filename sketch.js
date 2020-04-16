@@ -41,6 +41,7 @@ function draw() {
   background(0);
   player.update().draw();
   fill(255,255,0)
+
   rect(enviroment[0].location.x, enviroment[0].location.y, enviroment[0].width, enviroment[0].height);
   rect(enviroment[1].location.x, enviroment[1].location.y, enviroment[1].width, enviroment[1].height);
 
