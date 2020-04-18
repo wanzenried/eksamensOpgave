@@ -4,22 +4,26 @@ class Player extends PhysicsObject {
     this.lastLocation = this.location.copy();
     this.powerUpState = powerUpState;
     this.speed = speed
+    this.rightKey = config.keys.right
+    this.leftKey = config.keys.left
+    this.playerFriction = config.playerFriction
+    this.jumpAcceleration = config.jumpAcceleration
   }
 
   update() {
     this.addForce(gravity);
 
-    if (keyIsDown(68)) { // d key
+    if (keyIsDown(this.rightKey)) { // d key
       this.acceleration.x += this.speed
     }
-    if (keyIsDown(65)) { // a key
+    if (keyIsDown(this.leftKey)) { // a key
       this.acceleration.x -= this.speed
     }
 
     let friction = this.velocity.copy()
     friction.mult(-1);
     friction.normalize();
-    friction.mult(0.1);
+    friction.mult(this.playerFriction);
 
     this.addForce(friction);
     this.calculate()
@@ -41,7 +45,7 @@ class Player extends PhysicsObject {
 
   jump() {
     if (!this.falling) {
-      this.acceleration.y -= 20;
+      this.acceleration.y -= this.jumpAcceleration;
       this.falling = true;
     }
   }

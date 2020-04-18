@@ -1,0 +1,12 @@
+{
+  "gravity": 1.5,
+  "playerSpeed": 0.5,
+  "playerMaxVelocity": 30,
+  "keys": {
+    "up": 32,
+    "left": 65,
+    "right": 68
+  },
+  "playerFriction": 0.1,
+  "jumpAcceleration": 20
+}
