@@ -7,7 +7,7 @@ class Player extends PhysicsObject {
     this.rightKey = config.keys.right
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
-    this.jumpAcceleration = config.jumpAcceleration
+    this.jumpAcceleration = unit*(config.jumpAcceleration/100)
   }
 
   update() {
@@ -32,10 +32,21 @@ class Player extends PhysicsObject {
 
     this.enviromentDetection();
 
+//sidescroll detection
+    if (this.location.x > unit * 6) {
+      this.location.x = unit * 6
+      updateBlocks(this.velocity.x)
+    }
+
+//floor and back wall detection
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
       this.velocity.y = 0;
       this.falling = false;
+    }
+    if (this.location.x < 0) {
+      this.location.x = 0
+      this.velocity.x = 0
     }
 
     this.lastLocation = this.location.copy()
