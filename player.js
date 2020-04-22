@@ -11,6 +11,8 @@ class Player extends PhysicsObject {
   }
 
   update() {
+    this.lastLocation = this.location.copy()
+
     this.addForce(gravity);
 
     if (keyIsDown(this.rightKey)) { // d key
@@ -32,13 +34,14 @@ class Player extends PhysicsObject {
 
     this.enviromentDetection();
 
+
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
       this.velocity.y = 0;
       this.falling = false;
     }
 
-    this.lastLocation = this.location.copy()
+
 
     return this;
   }
