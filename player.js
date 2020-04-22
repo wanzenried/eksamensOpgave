@@ -121,7 +121,7 @@ class Player extends PhysicsObject {
   collectibleDetection() {
     for (var i = 0; i < collectibles.length; i++) {
       let t = this.collision(collectibles[i]);
-      if(t.collision){
+      if (t.collision) {
         //collect item / powerup
         console.log("you touched an item");
       }
