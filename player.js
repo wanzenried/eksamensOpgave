@@ -11,6 +11,8 @@ class Player extends PhysicsObject {
   }
 
   update() {
+    this.lastLocation = this.location.copy()
+
     this.addForce(gravity);
 
     if (keyIsDown(this.rightKey)) { // d key
@@ -49,7 +51,7 @@ class Player extends PhysicsObject {
       this.velocity.x = 0
     }
 
-    this.lastLocation = this.location.copy()
+
 
     return this;
   }
