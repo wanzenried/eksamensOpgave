@@ -74,7 +74,6 @@ class PhysicsObject {
       returnParams.goToY = l1.y;
       return returnParams;
     }
-
     //right Detection
     else if (angle > -QUARTER_PI && angle < QUARTER_PI) {
       returnParams.right = true;
@@ -88,7 +87,9 @@ class PhysicsObject {
       returnParams.goToX = l1.x;
       returnParams.goToY = r3.y;
       return returnParams;
-    } else {
+    }
+
+    else {
       returnParams.collision = false;
       return returnParams;
     }
