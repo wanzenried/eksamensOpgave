@@ -33,12 +33,10 @@ function setup() {
 
   //Make testboxes
   for (var i = 0; i < 100; i++) {
-    enviroment[i] = {
-      location: createVector((i * 3) * unit, 9 * unit),
-      width: unit,
-      height: unit,
-      num: i
-    };
+    if (i % 2 === 0 )
+    enviroment[i] = new Brick(createVector((i * 3) * unit, 9 * unit), unit, unit)
+    else
+    enviroment[i] = new Mystery(createVector((i * 3) * unit, 9 * unit), unit, unit)
   }
 }
 
@@ -62,11 +60,8 @@ function draw() {
 
 //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
-    fill(255, 255, 0)
-    rect(enviroment[i].location.x, enviroment[i].location.y, enviroment[i].width, enviroment[i].height);
-    fill(0, 0, 255)
-    textAlign(LEFT, TOP)
-    text(enviroment[i].num, enviroment[i].location.x, enviroment[i].location.y)
+    if (enviroment[i].drawed)
+    enviroment[i].draw()
   }
 
 

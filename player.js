@@ -81,7 +81,7 @@ class Player extends PhysicsObject {
           this.location.x = t.goToX;
           this.location.y = t.goToY;
           this.velocity.y = 0;
-
+          enviroment[i].hit()
         }
         if (t.left || t.right) {
           this.location.x = t.goToX;
