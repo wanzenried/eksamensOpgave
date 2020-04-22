@@ -1,10 +1,10 @@
 let config;
 
-function preload(){
+function preload() {
   let path = '/config.json';
   config = loadJSON(path);
   if (config)
-  console.log("config is loaded");
+    console.log("config is loaded");
 }
 
 let gravity; //add ability to change via config file
@@ -17,42 +17,58 @@ let collectibles = [];
 
 function setup() {
   // put setup code here
-  gravity = createVector(0,config.gravity);
+  gravity = createVector(0, config.gravity);
   createCanvas(0, 0)
   windowResized()
   // for (var i = 0; i < 3; i++) {
-  //   sliders[i] = createSlider(0,100,50);
+  //   sliders[i] = createSlider(60,70,0);
   //   sliders[i].position(10,10+30*i);
   //   sliders[i].style('width','80px');
   // }
 
 
 
+//define new player
+  player = new Player(createVector(width/10, 0), unit, unit, config.playerSpeed, config.playerMaxVelocity);
 
-  player = new Player(createVector(100, 100), unit, unit, config.playerSpeed, config.playerMaxVelocity);
-  enviroment[0] = {
-    location: createVector(3 * unit, 11 * unit),
-    width: unit,
-    height: unit
-  };
-  enviroment[1] = {
-    location: createVector(5 * unit, 10 * unit),
-    width: unit,
-    height: unit
-  };
+  //Make testboxes
+  for (var i = 0; i < 100; i++) {
+    enviroment[i] = {
+      location: createVector((i * 3) * unit, 9 * unit),
+      width: unit,
+      height: unit,
+      num: i
+    };
+  }
 }
 
+//Update boxes location when sidescrolling
+function updateBlocks(move) {
+  for (var i = 0; i < enviroment.length; i++) {
+    enviroment[i].location.x -= move
+    }
+  }
 function draw() {
   // put drawing code here
-  // gravity.y = sliders[0].value()/50;
-
+  // testjumpAcceleration = sliders[0].value();
 
   background(0);
-  player.update().draw();
-  fill(255, 255, 0)
 
-  rect(enviroment[0].location.x, enviroment[0].location.y, enviroment[0].width, enviroment[0].height);
-  rect(enviroment[1].location.x, enviroment[1].location.y, enviroment[1].width, enviroment[1].height);
+//stopline
+  stroke(255)
+  line(unit * 7, 0, unit * 7, height)
+  noStroke()
+  player.update().draw();
+
+//Draw boxes
+  for (var i = 0; i < enviroment.length; i++) {
+    fill(255, 255, 0)
+    rect(enviroment[i].location.x, enviroment[i].location.y, enviroment[i].width, enviroment[i].height);
+    fill(0, 0, 255)
+    textAlign(LEFT, TOP)
+    text(enviroment[i].num, enviroment[i].location.x, enviroment[i].location.y)
+  }
+
 
 }
 
