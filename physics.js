@@ -150,7 +150,7 @@ class PhysicsObject {
   calculate() {
     this.velocity.add(this.acceleration);
     this.velocity.limit(this.maxVelocity);
-    if (this.velocity.x < 0.0001 && this.velocity.x > -0.0001) this.velocity.x = 0
+    if (this.velocity.x < 0.1 && this.velocity.x > -0.1) this.velocity.x = 0
     this.acceleration.mult(0);
   }
 }
