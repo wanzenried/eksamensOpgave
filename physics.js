@@ -138,46 +138,82 @@ class PhysicsObject {
       left: false,
       right: false
     }, {
-      {
+
         top: false,
         bottom: false,
         left: false,
         right: false
-      }
+
     }];
 
     let pos = [l2.copy(),l2.copy()];
-    pos[1].x -= unit;
+    pos[1].x + unit;
+
 
     for (var i = 0; i < 2; i++) {
-      let f = l2.copy();
+      let f = pos[i].copy();
 
       f.sub(l3);
 
 
       let angle = f.heading();
+      console.log(angle);
 
 
       //top detection
       if (angle >= -(3 * QUARTER_PI) && angle <= -QUARTER_PI) {
         p[i].top = true;
-        break;
+        // break;
       }
       //left detection
-      else if ((angle > (3 * QUARTER_PI) && angle < PI) || (angle > -(PI) && angle < -(3 * QUARTER_PI))) {
+      else if ((angle > (3 * QUARTER_PI) && angle <= PI) || (angle >= -(PI) && angle < -(3 * QUARTER_PI))) {
         p[i].left = true;
-        break;
+        // break;
       }
       //right Detection
       else if (angle > -QUARTER_PI && angle < QUARTER_PI) {
         p[i].right = true;
-        break;
+        // break;
       }
       //bottom Detection
       else if (angle >= QUARTER_PI && angle <= (3 * QUARTER_PI)) {
         p[i].bottom = true;
-        break;
+        // break;
       }
+    }
+    console.log(p[0]);
+    console.log(p[1]);
+
+    //top detection
+    if (p[0].top && p[1].top) {
+      returnParams.top = true;
+      returnParams.goToX = l1.x;
+      returnParams.goToY = l3.y - this.height;
+      return returnParams;
+    }
+    //left detection
+    else if (p[0].left || p[1].left) {
+      returnParams.left = true;
+      returnParams.goToX = l3.x - this.width;
+      returnParams.goToY = l1.y;
+      return returnParams;
+    }
+    //right Detection
+    else if (p[0].right || p[1].right) {
+      returnParams.right = true;
+      returnParams.goToX = r3.x;
+      returnParams.goToY = l1.y;
+      return returnParams;
+    }
+    //bottom Detection
+    else if (p[0].bottom && p[1].bottom) {
+      returnParams.bottom = true;
+      returnParams.goToX = l1.x;
+      returnParams.goToY = r3.y;
+      return returnParams;
+    } else {
+      returnParams.collision = false;
+      return returnParams;
     }
 
   }
@@ -189,7 +225,7 @@ class PhysicsObject {
   calculate() {
     this.velocity.add(this.acceleration);
     this.velocity.limit(this.maxVelocity);
-    if (this.velocity.x < 0.1 && this.velocity.x > -0.1) this.velocity.x = 0
+    if (this.velocity.x < 0.1 && this.velocity.x > -0.1) this.velocity.x = 0;
     this.acceleration.mult(0);
   }
 }

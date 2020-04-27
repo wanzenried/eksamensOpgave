@@ -29,7 +29,7 @@ function setup() {
 
 
 //define new player
-  player = new Player(createVector(width/10, 0), unit, unit, config.playerSpeed, config.playerMaxVelocity);
+  player = new Player(createVector(width/10, 0), unit, unit*2, config.playerSpeed, config.playerMaxVelocity);
 
   //Make testboxes
   for (var i = 0; i < 100; i++) {
@@ -38,6 +38,8 @@ function setup() {
     else
     enviroment[i] = new Mystery(createVector((i * 3) * unit, 8 * unit), unit, unit)
   }
+
+  enviroment[100] = new Brick(createVector(5*unit,10*unit),unit,unit)
 }
 
 //Update boxes location when sidescrolling

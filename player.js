@@ -66,12 +66,14 @@ class Player extends PhysicsObject {
   draw() {
     fill(255, 0, 0);
     rect(this.location.x, this.location.y, this.width, this.height);
+    fill(0,0,255);
+    circle(this.location.x,this.location.y,20);
   }
 
   enviromentDetection() {
     for (var i = 0; i < enviroment.length; i++) {
 
-      let t = this.collision(enviroment[i]);
+      let t = this.tallCollision(enviroment[i]);
       if (t.collision) {
         if (t.top) {
           this.location.x = t.goToX;
