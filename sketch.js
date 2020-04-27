@@ -34,9 +34,9 @@ function setup() {
   //Make testboxes
   for (var i = 0; i < 100; i++) {
     if (i % 2 === 0 )
-    enviroment[i] = new Brick(createVector((i * 3) * unit, 9 * unit), unit, unit)
+    enviroment[i] = new Brick(createVector((i * 3) * unit, 8 * unit), unit, unit)
     else
-    enviroment[i] = new Mystery(createVector((i * 3) * unit, 9 * unit), unit, unit)
+    enviroment[i] = new Mystery(createVector((i * 3) * unit, 8 * unit), unit, unit)
   }
 }
 
