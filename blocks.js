@@ -48,7 +48,7 @@ class Brick extends Block {
 //Mystery is a block which contains some thing that gets released when hit from the bottom
 class Mystery extends Block {
   // defualt content is set to coin
-  constructor(location, width, height, content = "coin") {
+  constructor(location, width, height, content = "Shroom") {
     super(location, width, height)
     this.color = color(255, 255, 0)
     this.content = content
@@ -61,15 +61,12 @@ class Mystery extends Block {
         console.log("coin");
         break;
       case "Shroom":
-        console.log("Shroom");
+      console.log("Shroom");
+        collectibles.push(new Shroom(createVector(this.location.x, this.location.y - unit), unit, unit))
         break;
       case "1up":
         console.log("1up");
         break;
-
-      default:
-
-
     }
     //removes content
     this.content = false
