@@ -1,11 +1,16 @@
 let config;
+let level
 
 function preload() {
   let path = '/config.json';
   config = loadJSON(path);
   if (config)
     console.log("config is loaded");
+    level = loadImage("/bitmap test.png")
+    if (level)
+    console.log("level is loaded");
 }
+
 
 let gravity; //add ability to change via config file
 let player;
@@ -20,6 +25,7 @@ function setup() {
   gravity = createVector(0, config.gravity);
   createCanvas(0, 0)
   windowResized()
+  makeLevel()
   // for (var i = 0; i < 3; i++) {
   //   sliders[i] = createSlider(60,70,0);
   //   sliders[i].position(10,10+30*i);
@@ -55,7 +61,7 @@ function draw() {
   // put drawing code here
   // testjumpAcceleration = sliders[0].value();
 
-  background(0);
+  background(0,50,200);
 
   //stopline
   stroke(255)

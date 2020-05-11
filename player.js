@@ -33,6 +33,7 @@ class Player extends PhysicsObject {
     this.location.add(this.velocity)
 
     this.enviromentDetection();
+    this.collectibleDetection()
 
 //sidescroll detection
     if (this.location.x > unit * 6) {
@@ -121,11 +122,21 @@ class Player extends PhysicsObject {
   }
 
   collectibleDetection() {
-    for (var i = 0; i < collectibles.length; i++) {
+    for (var i = collectibles.length; i < -1; i--) {
       let t = this.collision(collectibles[i]);
+      // console.log(t);
       if (t.collision) {
+        console.log("HI");
         //collect item / powerup
         console.log("you touched an item");
+        switch (collectibles[i].kind) {
+          case "Shroom":
+            console.log("U 8 a Shroom");
+            break;
+          default:
+
+        }
+        collectibles.splice(i,1)
       }
     }
   }

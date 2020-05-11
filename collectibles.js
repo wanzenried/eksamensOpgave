@@ -12,7 +12,7 @@ class Collectible extends PhysicsObject {
     fill(this.color)
     // fill(255)
     noStroke()
-    circle(this.location.x , this.location.y , this.width)
+    circle(this.location.x + this.width/2, this.location.y + this.width/2, this.width)
   }
 
   move() {
