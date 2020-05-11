@@ -5,6 +5,8 @@ let playerImg;
 let groundImg;
 let pipeImg;
 let mysteryImg;
+let mysteryEmptyImg;
+let indestructibleImg;
 
 function preload() {
   let path = '/config.json';
@@ -18,7 +20,9 @@ function preload() {
   playerImg = loadImage("/graphics/player.bmp");
   groundImg = loadImage("/graphics/ground.bmp");
   pipeImg = loadImage("/graphics/pipe.bmp");
-  mysteryImg = loadImage("/graphics/mystery.bmp")
+  mysteryImg = loadImage("/graphics/mystery.bmp");
+  mysteryEmptyImg = loadImage("/graphics/mystery_empty.bmp");
+  indestructibleImg = loadImage("/graphics/indestructible.bmp");
 }
 
 
