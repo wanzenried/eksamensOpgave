@@ -28,15 +28,16 @@ function setup() {
 
 
 
-//define new player
-  player = new Player(createVector(width/10, 0), unit, unit, config.playerSpeed, config.playerMaxVelocity);
+  //define new player
+  player = new Player(createVector(width / 10, 0), unit, unit, config.playerSpeed, config.playerMaxVelocity);
 
   //Make testboxes
-  for (var i = 0; i < 100; i++) {
-    if (i % 2 === 0 )
-    enviroment[i] = new Brick(createVector((i * 3) * unit, 9 * unit), unit, unit)
+  enviroment.push(new Brick(createVector((9) * unit, 11 * unit), unit, unit))
+  for (var i = 1; i < 100; i++) {
+    if (i % 2 === 0)
+      enviroment[i] = new Brick(createVector((i * 3) * unit, 9 * unit), unit, unit)
     else
-    enviroment[i] = new Mystery(createVector((i * 3) * unit, 9 * unit), unit, unit)
+      enviroment[i] = new Mystery(createVector((i * 3) * unit, 9 * unit), unit, unit)
   }
 }
 
@@ -44,24 +45,33 @@ function setup() {
 function updateBlocks(move) {
   for (var i = 0; i < enviroment.length; i++) {
     enviroment[i].location.x -= move
-    }
   }
+  for (var i = 0; i < collectibles.length; i++) {
+    collectibles[i].location.x -= move
+  }
+}
+
 function draw() {
   // put drawing code here
   // testjumpAcceleration = sliders[0].value();
 
   background(0);
 
-//stopline
+  //stopline
   stroke(255)
   line(unit * 7, 0, unit * 7, height)
   noStroke()
   player.update().draw();
 
-//Draw boxes
+  //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
     if (enviroment[i].drawed)
-    enviroment[i].draw()
+      enviroment[i].draw()
+  }
+  for (var i = 0; i < collectibles.length; i++) {
+    collectibles[i].draw()
+    if (collectibles[i].moving)
+      collectibles[i].move()
   }
 
 
