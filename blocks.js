@@ -11,9 +11,11 @@ class Block {
   }
 
   draw() {
-    fill(this.color)
-    noStroke()
-    square(this.location.x, this.location.y, unit)
+    // fill(this.color)
+    // noStroke()
+    // square(this.location.x, this.location.y, unit)
+
+    image(this.graphic,this.location.x,this.location.y,unit,unit);
 
     //For Mystery blocks ?, makes them if the block have content
     if (this.content) {
@@ -36,11 +38,12 @@ class Brick extends Block {
   constructor(location, width, height) {
     super(location, width, height)
     this.color = 125
+    this.graphic = brickImg;
   }
 
-  draw(){
-    image(brickImg,this.location.x,this.location.y,unit,unit);
-  }
+  // draw(){
+  //   image(brickImg,this.location.x,this.location.y,unit,unit);
+  // }
 
   //hit get activated in player class
   hit() {
@@ -60,6 +63,7 @@ class Mystery extends Block {
     super(location, width, height)
     this.color = color(255, 255, 0)
     this.content = content
+    this.graphic = mysteryImg;
   }
 
   //hit get activated in player class
@@ -88,10 +92,29 @@ class Mystery extends Block {
 class Ground extends Block {
   constructor(location,width,height) {
     super(location,width,height);
+    this.graphic = groundImg;
 
   }
 
-  draw(){
-    image(groundImg,this.location.x,this.location.y,unit,unit);
+  // draw(){
+  //   image(groundImg,this.location.x,this.location.y,unit,unit);
+  // }
+}
+
+class Pipe extends Block {
+  constructor(location,width,height) {
+    super(location,width,height);
+    this.graphic = pipeImg;
+  }
+
+  // draw(){
+  //   image(pipeImg,this.location.x,this.location.y,unit,unit);
+  // }
+}
+
+class Indestructible extends Block {
+  constructor(location,width,height){
+    super(location,width,height);
+    this.graphic = indestructibleImg;
   }
 }
