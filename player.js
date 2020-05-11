@@ -93,12 +93,7 @@ class Player extends PhysicsObject {
       }
     }
 
-    if(top){
-      // this.location.x = top.goToX;
-      this.location.y = top.goToY;
-      this.velocity.y = 0;
-      this.falling = false;
-    }
+    this.falling = true;
     if(left){
       this.location.x = left.goToX;
       this.velocity.x = 0;
@@ -111,6 +106,12 @@ class Player extends PhysicsObject {
         this.location.y = bottom.goToY;
         this.velocity.y = 0;
         bottom.object.hit()
+    }
+    if(top){
+      // this.location.x = top.goToX;
+      this.location.y = top.goToY;
+      this.velocity.y = 0;
+      this.falling = false;
     }
 
   }

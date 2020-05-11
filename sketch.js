@@ -6,7 +6,7 @@ function preload() {
   config = loadJSON(path);
   if (config)
     console.log("config is loaded");
-    level = loadImage("/bitmap test.png")
+    level = loadImage("/map.bmp");
     if (level)
     console.log("level is loaded");
 }
@@ -17,6 +17,7 @@ let player;
 let hostiles = [];
 let enviroment = [];
 let collectibles = [];
+let playerLocation;
 
 // let sliders = [];
 
@@ -35,16 +36,16 @@ function setup() {
 
 
   //define new player
-  player = new Player(createVector(width / 10, 0), unit, unit, config.playerSpeed, config.playerMaxVelocity);
+  player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
 
   //Make testboxes
-  enviroment.push(new Brick(createVector((9) * unit, 11 * unit), unit, unit))
-  for (var i = 1; i < 100; i++) {
+  /*enviroment.push(new Brick(createVector((9) * unit, 11 * unit), unit, unit))
+  for (var i = 0; i < 12; i++) {
     if (i % 2 === 0)
-      enviroment[i] = new Brick(createVector((i * 3) * unit, 9 * unit), unit, unit)
+      enviroment[i] = new Brick(createVector((3) * unit, i * unit), unit, unit)
     else
-      enviroment[i] = new Mystery(createVector((i * 3) * unit, 9 * unit), unit, unit)
-  }
+      enviroment[i] = new Mystery(createVector((3) * unit, i * unit), unit, unit)
+  }*/
 }
 
 //Update boxes location when sidescrolling
