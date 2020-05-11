@@ -26,6 +26,7 @@ class PhysicsObject {
 
     //create return parameters:
     let returnParams = {
+      object: object,
       collision: false,
       top: false,
       bottom: false,
@@ -68,7 +69,7 @@ class PhysicsObject {
       return returnParams;
     }
     //left detection
-    else if ((angle > (3*QUARTER_PI) && angle < PI)||(angle > -(PI) &&angle < -(3*QUARTER_PI))) {
+    else if ((angle > (3*QUARTER_PI) && angle <= PI)||(angle >= -(PI) &&angle < -(3*QUARTER_PI))) {
       returnParams.left = true;
       returnParams.goToX = l3.x - this.width;
       returnParams.goToY = l1.y;
