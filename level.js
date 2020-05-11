@@ -21,7 +21,7 @@ function makeLevel() {
           playerLocation = createVector(i * unit, j * unit);
           break;
         case groundColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit));
 
           break;
         case brickColour:

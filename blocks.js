@@ -25,6 +25,10 @@ class Block {
     return this
   }
 
+  hit(){
+    return 0;
+  }
+
 }
 
 //Brick is an breakable block
@@ -32,6 +36,10 @@ class Brick extends Block {
   constructor(location, width, height) {
     super(location, width, height)
     this.color = 125
+  }
+
+  draw(){
+    image(brickImg,this.location.x,this.location.y,unit,unit);
   }
 
   //hit get activated in player class
@@ -48,7 +56,7 @@ class Brick extends Block {
 //Mystery is a block which contains some thing that gets released when hit from the bottom
 class Mystery extends Block {
   // defualt content is set to coin
-  constructor(location, width, height, content = "Shroom") {
+  constructor(location, width, height, content = "coin") {
     super(location, width, height)
     this.color = color(255, 255, 0)
     this.content = content
@@ -75,4 +83,15 @@ class Mystery extends Block {
     this.content = false
   }
 
+}
+
+class Ground extends Block {
+  constructor(location,width,height) {
+    super(location,width,height);
+
+  }
+
+  draw(){
+    image(groundImg,this.location.x,this.location.y,unit,unit);
+  }
 }
