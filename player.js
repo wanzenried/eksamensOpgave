@@ -31,6 +31,8 @@ class Player extends PhysicsObject {
     this.calculate()
 
     this.location.add(this.velocity)
+    // this.enviromentDetection();
+
 
     this.enviromentDetection();
 
@@ -69,32 +71,47 @@ class Player extends PhysicsObject {
   }
 
   enviromentDetection() {
+    let top;
+    let bottom;
+    let left;
+    let right;
     for (var i = 0; i < enviroment.length; i++) {
-
       let t = this.collision(enviroment[i]);
-      if (t.collision) {
-        if (t.top) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.y = 0;
-          this.falling = false;
-        }
-        if (t.bottom) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.y = 0;
-          enviroment[i].hit()
-        }
-        if (t.left || t.right) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.x = 0;
-        }
-        break;
-      } else {
-        this.falling = true;
+
+      if(t.bottom){
+        bottom = t;
+      }
+      if(t.top){
+        top = t;
+      }
+      if(t.left && enviroment[i].location.y < this.location.y){
+        left = t;
+      }
+      if(t.right && enviroment[i].location.y < this.location.y){
+        right = t;
       }
     }
+
+    if(top){
+      // this.location.x = top.goToX;
+      this.location.y = top.goToY;
+      this.velocity.y = 0;
+      this.falling = false;
+    }
+    if(left){
+      this.location.x = left.goToX;
+      this.velocity.x = 0;
+    }
+    if(right){
+      this.location.x = right.goToX;
+      this.velocity.x = 0;
+    }
+    if(bottom){
+        this.location.y = bottom.goToY;
+        this.velocity.y = 0;
+        bottom.object.hit()
+    }
+
   }
 
   hostileDetection() {
