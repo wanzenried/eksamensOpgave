@@ -67,8 +67,9 @@ class Player extends PhysicsObject {
   }
 
   draw() {
-    fill(255, 0, 0);
-    rect(this.location.x, this.location.y, this.width, this.height);
+    // fill(255, 0, 0);
+    // rect(this.location.x, this.location.y, this.width, this.height);
+    image(playerImg,this.location.x,this.location.y,unit,unit);
   }
 
   enviromentDetection() {
