@@ -76,3 +76,24 @@ class Mystery extends Block {
   }
 
 }
+
+class Pipe extends Block {
+  constructor(location, width, height) {
+    super(location, width, height)
+    this.color = color(0,255,0)
+  }
+}
+
+class IndestructibleBlock extends Block {
+  constructor(location, width, height) {
+    super(location, width, height)
+    this.color = 150
+  }
+}
+
+class GrundBlock extends Block {
+  constructor(location, width, height) {
+    super(location, width, height)
+    this.color = 0
+  }
+}
