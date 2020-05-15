@@ -149,6 +149,12 @@ class Player extends PhysicsObject {
           case "Shroom":
           console.log("U 8 a sHroooom");
           break;
+          case "1up":
+          console.log("U GIT 1 liFe");
+          break;
+          case "StarMan":
+          console.log("RUN!!! MAN, RUUNNN!!!");
+          break;
         }
         collectibles.splice(i,1)
       }
