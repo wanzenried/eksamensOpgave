@@ -6,6 +6,7 @@ class Collectible extends PhysicsObject {
     this.height = h
     this.moving = false
     this.acceleration.x = 2
+    this.collide = true
   }
 
   draw() {
@@ -21,42 +22,52 @@ class Collectible extends PhysicsObject {
     this.calculate()
     this.location.add(this.velocity)
     // this.velocity.mult(0)
-    if (this.location.y > height - this.height) {
-      this.location.y = height - this.height;
-      this.velocity.y = 0;
-    }
     this.enviromentDetection();
   }
 
   enviromentDetection() {
+    let top;
+    let bottom;
+    let left;
+    let right;
     for (var i = 0; i < enviroment.length; i++) {
-
       let t = this.collision(enviroment[i]);
-      if (t.collision) {
-        if (t.top) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.y = 0;
-          this.falling = false;
-        }
-        if (t.bottom) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.y = 0;
-          enviroment[i].hit()
-        }
-        if (t.left || t.right) {
-          this.location.x = t.goToX;
-          this.location.y = t.goToY;
-          this.velocity.mult(-1)
-        }
-        break;
-      } else {
-        this.falling = true;
+
+      if(t.bottom){
+        bottom = t;
+      }
+      if(t.top){
+        top = t;
+      }
+      if(t.left && enviroment[i].location.y < this.location.y){
+        left = t;
+      }
+      if(t.right && enviroment[i].location.y < this.location.y){
+        right = t;
       }
     }
-  }
 
+    this.falling = true;
+    if(left){
+      this.location.x = left.goToX;
+      this.velocity.mult(-1)
+    }
+    if(right){
+      this.location.x = right.goToX;
+      this.velocity.mult(-1)
+    }
+    if(bottom){
+        this.location.y = bottom.goToY;
+        this.velocity.y = 0;
+    }
+    if(top){
+      // this.location.x = top.goToX;
+      this.location.y = top.goToY;
+      this.velocity.y = 0;
+      this.falling = false;
+    }
+
+  }
 }
 
 class Shroom extends Collectible {
@@ -65,5 +76,23 @@ class Shroom extends Collectible {
     this.moving = true
     this.color = color("brown")
     this.kind = "Shroom"
+  }
+}
+
+class OneUp extends Collectible {
+  constructor(location, width, height) {
+    super(location, width, height)
+    this.moving = true
+    this.color = color("green")
+    this.kind = "1up"
+  }
+}
+
+class StarMan extends Collectible {
+  constructor(location, width, height) {
+    super(location, width, height)
+    this.moving = true
+    this.color = color("yellow")
+    this.kind = "StarMan"
   }
 }
