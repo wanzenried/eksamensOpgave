@@ -1,14 +1,28 @@
 let config;
-let level
+let level;
+let brickImg;
+let playerImg;
+let groundImg;
+let pipeImg;
+let mysteryImg;
+let mysteryEmptyImg;
+let indestructibleImg;
 
 function preload() {
   let path = '/config.json';
   config = loadJSON(path);
   if (config)
     console.log("config is loaded");
-    level = loadImage("/map.bmp");
-    if (level)
+  level = loadImage("/map.bmp");
+  if (level)
     console.log("level is loaded");
+  brickImg = loadImage("/graphics/brick.bmp");
+  playerImg = loadImage("/graphics/player.bmp");
+  groundImg = loadImage("/graphics/ground.bmp");
+  pipeImg = loadImage("/graphics/pipe.bmp");
+  mysteryImg = loadImage("/graphics/mystery.bmp");
+  mysteryEmptyImg = loadImage("/graphics/mystery_empty.bmp");
+  indestructibleImg = loadImage("/graphics/indestructible.bmp");
 }
 
 
@@ -62,7 +76,7 @@ function draw() {
   // put drawing code here
   // testjumpAcceleration = sliders[0].value();
 
-  background(0,50,200);
+  background(0, 50, 200);
 
   //stopline
   stroke(255)

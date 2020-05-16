@@ -11,9 +11,11 @@ class Block {
   }
 
   draw() {
-    fill(this.color)
-    noStroke()
-    square(this.location.x, this.location.y, unit)
+    // fill(this.color)
+    // noStroke()
+    // square(this.location.x, this.location.y, unit)
+
+    image(this.graphic,this.location.x,this.location.y,unit,unit);
 
     //For Mystery blocks ?, makes them if the block have content
     if (this.content) {
@@ -25,6 +27,10 @@ class Block {
     return this
   }
 
+  hit(){
+    return 0;
+  }
+
 }
 
 //Brick is an breakable block
@@ -32,7 +38,12 @@ class Brick extends Block {
   constructor(location, width, height) {
     super(location, width, height)
     this.color = 125
+    this.graphic = brickImg;
   }
+
+  // draw(){
+  //   image(brickImg,this.location.x,this.location.y,unit,unit);
+  // }
 
   //hit get activated in player class
   hit() {
@@ -48,10 +59,11 @@ class Brick extends Block {
 //Mystery is a block which contains some thing that gets released when hit from the bottom
 class Mystery extends Block {
   // defualt content is set to coin
-  constructor(location, width, height, content = "Shroom") {
+  constructor(location, width, height, content = "coin") {
     super(location, width, height)
     this.color = color(255, 255, 0)
     this.content = content
+    this.graphic = mysteryImg;
   }
 
   //hit get activated in player class
@@ -77,23 +89,32 @@ class Mystery extends Block {
 
 }
 
+class Ground extends Block {
+  constructor(location,width,height) {
+    super(location,width,height);
+    this.graphic = groundImg;
+
+  }
+
+  // draw(){
+  //   image(groundImg,this.location.x,this.location.y,unit,unit);
+  // }
+}
+
 class Pipe extends Block {
-  constructor(location, width, height) {
-    super(location, width, height)
-    this.color = color(0,255,0)
+  constructor(location,width,height) {
+    super(location,width,height);
+    this.graphic = pipeImg;
   }
+
+  // draw(){
+  //   image(pipeImg,this.location.x,this.location.y,unit,unit);
+  // }
 }
 
-class IndestructibleBlock extends Block {
-  constructor(location, width, height) {
-    super(location, width, height)
-    this.color = 150
-  }
-}
-
-class GrundBlock extends Block {
-  constructor(location, width, height) {
-    super(location, width, height)
-    this.color = 0
+class Indestructible extends Block {
+  constructor(location,width,height){
+    super(location,width,height);
+    this.graphic = indestructibleImg;
   }
 }
