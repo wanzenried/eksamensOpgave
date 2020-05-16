@@ -65,10 +65,10 @@ class Mystery extends Block {
         collectibles.push(new Shroom(createVector(this.location.x, this.location.y - unit), unit, unit))
         break;
       case "1up":
-        console.log("1up");
+        collectibles.push(new OneUp(createVector(this.location.x, this.location.y - unit), unit, unit))
         break;
       case "StarMan":
-        console.log("StarMan");
+        collectibles.push(new StarMan(createVector(this.location.x, this.location.y - unit), unit, unit))
         break;
     }
     //removes content
