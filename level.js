@@ -21,14 +21,14 @@ function makeLevel() {
           playerLocation = createVector(i * unit, j * unit);
           break;
         case groundColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit));
 
           break;
         case brickColour:
           enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
           break;
         case indestructibleColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Indestructible(createVector(i * unit, j * unit), unit, unit));
           break;
         case mystery1Colour:
           enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit,"coin"));
@@ -46,7 +46,7 @@ function makeLevel() {
 
           break;
         case pipeColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Pipe(createVector(i * unit, j * unit), unit, unit));
           break;
         case flagColour:
           enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
