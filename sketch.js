@@ -34,6 +34,8 @@ let collectibles = [];
 let playerLocation;
 let blockArray = [];
 
+let isDead = false;
+
 // let sliders = [];
 
 function setup() {
@@ -76,7 +78,7 @@ function updateBlocks(move) {
 function draw() {
   // put drawing code here
   // testjumpAcceleration = sliders[0].value();
-
+if(!isDead){
   background(0, 50, 200);
 
   //stopline
@@ -99,6 +101,10 @@ function draw() {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
   }
+  isDead = true;
+} else{
+  deathScreen();
+}
 
 
 }
@@ -107,4 +113,15 @@ function keyPressed() {
   if (keyCode == config.keys.up) {
     player.jump();
   }
+}
+
+function deathScreen(){
+  background(0,0,0,15);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+  fill(225,2,31,25);
+  text("YOU  DIED",width/2,height/2);
+  textSize(width/25);
+  fill(95,2,31,25);
+  text("press r to restart", width/2,height/3*2)
 }
