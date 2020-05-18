@@ -23,32 +23,33 @@ function makeLevel() {
           playerLocation = createVector(i * unit, j * unit);
           break;
         case groundColour:
-          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          
           blockArray[i][j] = true;
 
           break;
         case brickColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
         case indestructibleColour:
-          enviroment.push(new Indestructible(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Indestructible(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
         case mystery1Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit,"coin"));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit,"coin",createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
         case mystery2Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "Shroom"));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "Shroom",createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
         case mystery3Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "StarMan"));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "StarMan",createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
@@ -59,14 +60,14 @@ function makeLevel() {
 
           break;
         case pipeColour:
-          enviroment.push(new Pipe(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Pipe(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
         case flagColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit));
+          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
           blockArray[i][j] = true;
-          
+
           break;
 
       }
