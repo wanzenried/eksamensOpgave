@@ -87,7 +87,7 @@ function draw() {
 
   //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
-    if (enviroment[i].drawed)
+    if (!enviroment[i].broken)
       enviroment[i].draw()
   }
   for (var i = 0; i < collectibles.length; i++) {
