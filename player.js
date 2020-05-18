@@ -7,7 +7,7 @@ class Player extends PhysicsObject {
     this.rightKey = config.keys.right
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
-    this.jumpAcceleration = unit*(config.jumpAcceleration/100)
+    this.jumpAcceleration = unit * (config.jumpAcceleration / 100)
   }
 
   update() {
@@ -34,17 +34,17 @@ class Player extends PhysicsObject {
     // this.enviromentDetection();
 
     if (collectibles.length > 0)
-    this.collectibleDetection()
+      this.collectibleDetection()
 
     this.enviromentDetection();
 
-//sidescroll detection
+    //sidescroll detection
     if (this.location.x > unit * 6) {
       this.location.x = unit * 6
       updateBlocks(this.velocity.x)
     }
 
-//floor and back wall detection
+    //floor and back wall detection
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
       this.velocity.y = 0;
@@ -70,7 +70,7 @@ class Player extends PhysicsObject {
   draw() {
     // fill(255, 0, 0);
     // rect(this.location.x, this.location.y, this.width, this.height);
-    image(playerImg,this.location.x,this.location.y,unit,unit);
+    image(playerImg, this.location.x, this.location.y, unit, unit);
   }
 
   enviromentDetection() {
@@ -81,35 +81,37 @@ class Player extends PhysicsObject {
     for (var i = 0; i < enviroment.length; i++) {
       let t = this.collision(enviroment[i]);
 
-      if(t.bottom){
+      if (t.bottom &&
+        blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y + 1] == false) {
         bottom = t;
       }
-      if(t.top){
+      if (t.top &&
+        blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y - 1] == false) {
         top = t;
       }
-      if(t.left && enviroment[i].location.y < this.location.y){
+      if (t.left && enviroment[i].location.y < this.location.y) {
         left = t;
       }
-      if(t.right && enviroment[i].location.y < this.location.y){
+      if (t.right && enviroment[i].location.y < this.location.y) {
         right = t;
       }
     }
 
     this.falling = true;
-    if(left){
+    if (left) {
       this.location.x = left.goToX;
       this.velocity.x = 0;
     }
-    if(right){
+    if (right) {
       this.location.x = right.goToX;
       this.velocity.x = 0;
     }
-    if(bottom){
-        this.location.y = bottom.goToY;
-        this.velocity.y = 0;
-        bottom.object.hit()
+    if (bottom) {
+      this.location.y = bottom.goToY;
+      this.velocity.y = 0;
+      bottom.object.hit()
     }
-    if(top){
+    if (top) {
       // this.location.x = top.goToX;
       this.location.y = top.goToY;
       this.velocity.y = 0;
@@ -142,22 +144,22 @@ class Player extends PhysicsObject {
   }
 
   collectibleDetection() {
-    for (var i = collectibles.length -1; i > -1; i--) {
+    for (var i = collectibles.length - 1; i > -1; i--) {
       let t = this.collision(collectibles[i]);
       // console.log(t);
-      if (t.collision){
+      if (t.collision) {
         switch (collectibles[i].kind) {
           case "Shroom":
-          console.log("U 8 a sHroooom");
-          break;
+            console.log("U 8 a sHroooom");
+            break;
           case "1up":
-          console.log("U GIT 1 liFe");
-          break;
+            console.log("U GIT 1 liFe");
+            break;
           case "StarMan":
-          console.log("RUN!!! MAN, RUUNNN!!!");
-          break;
+            console.log("RUN!!! MAN, RUUNNN!!!");
+            break;
         }
-        collectibles.splice(i,1)
+        collectibles.splice(i, 1)
       }
     }
   }
