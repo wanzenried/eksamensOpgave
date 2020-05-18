@@ -1,9 +1,11 @@
 //Master block class
 class Block {
-  constructor(location, size) {
+  constructor(location, size, trueLocation) {
     this.location = location.copy();
     this.width = size
     this.height = size
+
+    this.trueLocation = trueLocation.copy();
 
     //used to remove blocks
     this.drawed = true
@@ -15,7 +17,7 @@ class Block {
     // noStroke()
     // square(this.location.x, this.location.y, unit)
 
-    image(this.graphic,this.location.x,this.location.y,unit,unit);
+    image(this.graphic, this.location.x, this.location.y, unit, unit);
 
     //For Mystery blocks ?, makes them if the block have content
     if (this.content) {
@@ -27,7 +29,7 @@ class Block {
     return this
   }
 
-  hit(){
+  hit() {
     return 0;
   }
 
@@ -35,8 +37,8 @@ class Block {
 
 //Brick is an breakable block
 class Brick extends Block {
-  constructor(location, width, height) {
-    super(location, width, height)
+  constructor(location, width, height, trueLocation) {
+    super(location, width, height, trueLocation)
     this.color = 125
     this.graphic = brickImg;
   }
@@ -59,8 +61,8 @@ class Brick extends Block {
 //Mystery is a block which contains some thing that gets released when hit from the bottom
 class Mystery extends Block {
   // defualt content is set to coin
-  constructor(location, width, height, content = "coin") {
-    super(location, width, height)
+  constructor(location, width, height, content = "coin", trueLocation) {
+    super(location, width, height, trueLocation)
     this.color = color(255, 255, 0)
     this.content = content
     this.graphic = mysteryImg;
@@ -90,8 +92,8 @@ class Mystery extends Block {
 }
 
 class Ground extends Block {
-  constructor(location,width,height) {
-    super(location,width,height);
+  constructor(location, width, height, trueLocation) {
+    super(location, width, height, trueLocation);
     this.graphic = groundImg;
 
   }
@@ -102,8 +104,8 @@ class Ground extends Block {
 }
 
 class Pipe extends Block {
-  constructor(location,width,height) {
-    super(location,width,height);
+  constructor(location, width, height, trueLocation) {
+    super(location, width, height, trueLocation);
     this.graphic = pipeImg;
   }
 
@@ -113,8 +115,8 @@ class Pipe extends Block {
 }
 
 class Indestructible extends Block {
-  constructor(location,width,height){
-    super(location,width,height);
+  constructor(location, width, height, trueLocation) {
+    super(location, width, height, trueLocation);
     this.graphic = indestructibleImg;
   }
 }
