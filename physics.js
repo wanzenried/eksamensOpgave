@@ -85,10 +85,12 @@ class PhysicsObject {
     }
     //bottom Detection
     else if (angle >= QUARTER_PI && angle <= (3*QUARTER_PI)) {
-      returnParams.bottom = true;
-      returnParams.goToX = l1.x;
-      returnParams.goToY = r3.y;
-      return returnParams;
+        returnParams.bottom = true;
+        returnParams.goToX = l1.x;
+        returnParams.goToY = r3.y;
+        return returnParams;
+
+
     } else {
       returnParams.collision = false;
       return returnParams;
