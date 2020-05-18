@@ -6,7 +6,7 @@ class Collectible extends PhysicsObject {
     this.height = h
     this.moving = false
     this.acceleration.x = 2
-    this.collide = true
+    this.broken = false
   }
 
   draw() {
