@@ -32,6 +32,7 @@ let hostiles = [];
 let enviroment = [];
 let collectibles = [];
 let playerLocation;
+let blockArray = [];
 
 // let sliders = [];
 
