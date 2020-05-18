@@ -33,6 +33,7 @@ let enviroment = [];
 let collectibles = [];
 let playerLocation;
 let blockArray = [];
+let score = 0
 
 // let sliders = [];
 
