@@ -1,14 +1,16 @@
 //Master block class
 class Block {
   constructor(location, width, height, trueLocation) {
+    //location on screen
     this.location = location.copy();
+    //Block's width and height
     this.width = width
     this.height = height
+    //The true location in level 2D array
     this.trueLocation = trueLocation;
 
-    //used to remove blocks
-    this.drawed = true
-    this.collide = true
+    //Boolean for if the block is broken. If true makes the block invisible and non-collidable
+    this.broken = false
   }
 
   draw() {
@@ -50,17 +52,17 @@ class Brick extends Block {
   hit() {
     //Makes sure that small Mario can not break the brick
     if (player.powerUpState != "smallMario") {
-      //Sets the block to not show and not to collide
-      this.drawed = false
-      this.collide = false
+      //Sets the block to be broken. The block will not show and collide
+      this.broken = true
     }
   }
 }
 
-//Mystery is a block which contains some thing that gets released when hit from the bottom
+//Mystery is a block which contains a collectible that gets released when hit from the bottom
 class Mystery extends Block {
-  // defualt content is set to coin
-  constructor(location, width, height, content = "coin", trueLocation) {
+  /*This block has a screenlocation, width, height, content in form of a coin or powerup
+  and a truelocation in the level 2D array*/
+  constructor(location, width, height, content, trueLocation) {
     super(location, width, height, trueLocation)
     this.color = color(255, 255, 0)
     this.content = content
@@ -69,6 +71,7 @@ class Mystery extends Block {
 
   //hit get activated in player class
   hit() {
+    //
     switch (this.content) {
       case "coin":
         console.log("coin");
@@ -87,7 +90,6 @@ class Mystery extends Block {
     //removes content
     this.content = false
   }
-
 }
 
 class Ground extends Block {
