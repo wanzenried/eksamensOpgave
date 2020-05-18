@@ -1,11 +1,10 @@
 //Master block class
 class Block {
-  constructor(location, size, trueLocation) {
+  constructor(location, width, height, trueLocation) {
     this.location = location.copy();
-    this.width = size
-    this.height = size
-
-    this.trueLocation = trueLocation.copy();
+    this.width = width
+    this.height = height
+    this.trueLocation = trueLocation;
 
     //used to remove blocks
     this.drawed = true
