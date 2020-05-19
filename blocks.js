@@ -82,6 +82,7 @@ class Mystery extends Block {
 
 //Is the blocks that makes the ground
 class Ground extends Block {
+  //This block has a screenlocation, width, height, truelocation in the level 2D array,and a graphic
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
     this.graphic = groundImg;
@@ -91,6 +92,7 @@ class Ground extends Block {
 
 //The pips that stick up through the map
 class Pipe extends Block {
+  //This block has a screenlocation, width, height, truelocation in the level 2D array,and a graphic
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
     this.graphic = pipeImg;
@@ -99,6 +101,7 @@ class Pipe extends Block {
 
 //Indestructible block which makes up the stairs
 class Indestructible extends Block {
+  //This block has a screenlocation, width, height, truelocation in the level 2D array,and a graphic
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
     this.graphic = indestructibleImg;
