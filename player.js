@@ -8,7 +8,6 @@ class Player extends PhysicsObject {
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
     this.jumpAcceleration = config.jumpAcceleration
-    this.h = height
   }
 
   update() {
@@ -70,10 +69,6 @@ class Player extends PhysicsObject {
 
   draw() {
     image(playerImg, this.location.x, this.location.y, unit, unit);
-    if (this.location.y + unit < this.h)
-    this.h = this.location.y + unit
-    stroke(0)
-    line(0,this.h,width,this.h)
   }
 
   enviromentDetection() {
@@ -87,8 +82,7 @@ class Player extends PhysicsObject {
         wonGame = true;
         break;
       }
-      if (t.bottom &&
-        blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y + 1] == false) {
+      if (t.bottom && blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y + 1] == false) {
         bottom = t;
       }
       if (t.top &&
