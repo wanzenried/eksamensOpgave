@@ -7,13 +7,18 @@ class Player extends PhysicsObject {
     this.rightKey = config.keys.right
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
-    this.jumpAcceleration = unit * (config.jumpAcceleration / 100)
+    this.jumpAcceleration = config.jumpAcceleration
+    this.h = height
   }
 
   update() {
     this.lastLocation = this.location.copy()
 
     this.addForce(gravity);
+    if (keyIsDown(69))
+    this.speed = 0.4
+    else
+    this.speed = config.playerSpeed
 
     if (keyIsDown(this.rightKey)) { // d key
       this.acceleration.x += this.speed
@@ -53,9 +58,6 @@ class Player extends PhysicsObject {
       this.location.x = 0
       this.velocity.x = 0
     }
-
-
-
     return this;
   }
 
@@ -70,6 +72,10 @@ class Player extends PhysicsObject {
     // fill(255, 0, 0);
     // rect(this.location.x, this.location.y, this.width, this.height);
     image(playerImg, this.location.x, this.location.y, unit, unit);
+    if (this.location.y + unit < this.h)
+    this.h = this.location.y + unit
+    stroke(0)
+    line(0,this.h,width,this.h)
   }
 
   enviromentDetection() {
