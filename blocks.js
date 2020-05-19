@@ -121,3 +121,14 @@ class FlagPole extends Block {
 
   }
 }
+
+class WinTrigger extends Block {
+  constructor(location,width,height,trueLocation){
+    super(location,width,height,trueLocation);
+    this.isTrigger = true;
+  }
+  }
+  draw(){
+    return
+  }
+}
