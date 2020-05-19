@@ -63,7 +63,7 @@ class Mystery extends Block {
     switch (this.content) {
       case "coin":
         console.log("coin");
-        score += 100
+        score += 200
         break;
       case "Shroom":
         console.log("Shroom");

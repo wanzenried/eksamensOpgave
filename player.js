@@ -159,12 +159,15 @@ class Player extends PhysicsObject {
         switch (collectibles[i].kind) {
           case "Shroom":
             console.log("U 8 a sHroooom");
+            score += 1000
             break;
           case "1up":
             console.log("U GIT 1 liFe");
+            score += 1000
             break;
           case "StarMan":
             console.log("RUN!!! MAN, RUUNNN!!!");
+            score += 2000
             break;
         }
         collectibles.splice(i, 1)

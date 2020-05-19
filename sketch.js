@@ -40,6 +40,7 @@ let dead = false;
 let wonGame = false;
 let score = 0
 let unit
+let startTime
 
 
 function setup() {
@@ -53,9 +54,12 @@ function setup() {
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
 
+
   dead = false;
   wonGame = false;
 
+  dead = false;
+  startTime = millis()
 }
 
 //Update boxes location when sidescrolling
@@ -101,7 +105,16 @@ if(!dead && !wonGame){
   }
 
 
+  // console.log(millis()-startTime);
+  time = ceil(200 - (millis()-startTime)/1000)
+  fill(255)
+  textSize(unit)
+  text("Score: " + score, unit, unit)
+  text("Time: " + time, 7 * unit, unit)
+
+
 } else if(dead){
+
   deathScreen();
 } else if(wonGame){
   wonScreen();
