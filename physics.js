@@ -35,7 +35,7 @@ class PhysicsObject {
       goToX: 0,
       goToY: 0
     };
-    if (!object.collide)
+    if (object.broken)
     return returnParams
 
     //first check if the two rectangular hitboxes touch:

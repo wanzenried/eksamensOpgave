@@ -34,33 +34,24 @@ let collectibles = [];
 let playerLocation;
 let blockArray = [];
 
-// let sliders = [];
+let dead = false;
+let score = 0
+let unit
+
 
 function setup() {
   // put setup code here
   gravity = createVector(0, config.gravity);
   createCanvas(0, 0)
-  windowResized()
+  windowSize()
+  unit = width / 16
   makeLevel()
-  // for (var i = 0; i < 3; i++) {
-  //   sliders[i] = createSlider(60,70,0);
-  //   sliders[i].position(10,10+30*i);
-  //   sliders[i].style('width','80px');
-  // }
-
-
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
+  
+  dead = false;
 
-  //Make testboxes
-  /*enviroment.push(new Brick(createVector((9) * unit, 11 * unit), unit, unit))
-  for (var i = 0; i < 12; i++) {
-    if (i % 2 === 0)
-      enviroment[i] = new Brick(createVector((3) * unit, i * unit), unit, unit)
-    else
-      enviroment[i] = new Mystery(createVector((3) * unit, i * unit), unit, unit)
-  }*/
 }
 
 //Update boxes location when sidescrolling
@@ -75,7 +66,8 @@ function updateBlocks(move) {
 
 function draw() {
   // put drawing code here
-  // testjumpAcceleration = sliders[0].value();
+
+if(!dead){
 
   background(0, 50, 200);
 
@@ -87,24 +79,57 @@ function draw() {
 
   //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
-    if (enviroment[i].drawed)
+    if (!enviroment[i].broken)
       enviroment[i].draw()
   }
+
+  //Drawes and updates collectibles
   for (var i = 0; i < collectibles.length; i++) {
     collectibles[i].draw()
     if (collectibles[i].moving)
       collectibles[i].move()
   }
+  //Removes collectibles when they leave the screen
   for (var i = collectibles.length - 1; i > -1; i--) {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
   }
 
+} else{
+  deathScreen();
+}
+
 
 }
 
 function keyPressed() {
+  //Checks if the jumpbutton it pressed
   if (keyCode == config.keys.up) {
     player.jump();
   }
+  if (keyCode == 82 && dead){
+    reset();
+  }
+}
+
+function reset(){
+  hostiles = [];
+  enviroment = [];
+  collectibles = [];
+  blockArray = [];
+  score = 0;
+  setup();
+}
+
+
+
+function deathScreen(){
+  background(0,0,0,15);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+  fill(225,2,31,25);
+  text("YOU  DIED",width/2,height/2);
+  textSize(width/25);
+  fill(95,2,31,25);
+  text("press r to restart", width/2,height/3*2)
 }
