@@ -55,8 +55,6 @@ class Player extends PhysicsObject {
       this.velocity.x = 0
     }
 
-
-
     return this;
   }
 
@@ -68,8 +66,6 @@ class Player extends PhysicsObject {
   }
 
   draw() {
-    // fill(255, 0, 0);
-    // rect(this.location.x, this.location.y, this.width, this.height);
     image(playerImg, this.location.x, this.location.y, unit, unit);
   }
 
@@ -112,7 +108,6 @@ class Player extends PhysicsObject {
       bottom.object.hit()
     }
     if (top) {
-      // this.location.x = top.goToX;
       this.location.y = top.goToY;
       this.velocity.y = 0;
       this.falling = false;
@@ -146,7 +141,6 @@ class Player extends PhysicsObject {
   collectibleDetection() {
     for (var i = collectibles.length - 1; i > -1; i--) {
       let t = this.collision(collectibles[i]);
-      // console.log(t);
       if (t.collision) {
         switch (collectibles[i].kind) {
           case "Shroom":
