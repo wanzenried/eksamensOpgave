@@ -79,7 +79,10 @@ class Player extends PhysicsObject {
     let right;
     for (var i = 0; i < enviroment.length; i++) {
       let t = this.collision(enviroment[i]);
-
+      if(t.object.isTrigger && t.collision){
+        wonGame = true;
+        break;
+      }
       if (t.bottom &&
         blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y + 1] == false) {
         bottom = t;
