@@ -97,7 +97,7 @@ if(!dead){
   }
 // console.log(hostiles.length, hostiles);
   for (var i = 0; i < hostiles.length; i++) {
-    hostiles[i].draw()
+    hostiles[i].draw().enviromentDetection()
   }
 
 } else{
