@@ -17,12 +17,9 @@ class Block {
     image(this.graphic, this.location.x, this.location.y, unit, unit);
 
     //For Mystery blocks ?, makes them if the block have content
-    if (this.content) {
-      textAlign(CENTER, CENTER)
-      textSize(unit)
-      fill(0)
-      text("?", this.location.x + unit / 2, this.location.y + unit / 2)
-    }
+    // if (this.content) {
+    //
+    // }
     return this
   }
 
@@ -34,9 +31,9 @@ class Block {
 
 //Brick is an breakable block
 class Brick extends Block {
+  //This block has a screenlocation, width, height, truelocation in the level 2D array,and a graphic
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation)
-    this.color = 125
     this.graphic = brickImg;
   }
 
@@ -44,7 +41,7 @@ class Brick extends Block {
   hit() {
     //Makes sure that small Mario can not break the brick
     if (player.powerUpState != "smallMario") {
-      //Sets the block to be broken. The block will not be drawed or collide
+      //Sets the block to be broken. The block will not be drawen or collide
       this.broken = true
     }
   }
@@ -52,11 +49,10 @@ class Brick extends Block {
 
 //Mystery is a block which contains a collectible that gets released when hit from the bottom
 class Mystery extends Block {
-  /*This block has a screenlocation, width, height, content in form of a coin or powerup
-  and a truelocation in the level 2D array*/
+  /*This block has a screenlocation, width, height, content in form of a coin or powerup,
+  truelocation in the level 2D array and a graphic*/
   constructor(location, width, height, content, trueLocation) {
     super(location, width, height, trueLocation)
-    this.color = color(255, 255, 0)
     this.content = content
     this.graphic = mysteryImg;
   }
@@ -90,10 +86,6 @@ class Ground extends Block {
     this.graphic = groundImg;
 
   }
-
-  // draw(){
-  //   image(groundImg,this.location.x,this.location.y,unit,unit);
-  // }
 }
 
 class Pipe extends Block {
@@ -101,10 +93,6 @@ class Pipe extends Block {
     super(location, width, height, trueLocation);
     this.graphic = pipeImg;
   }
-
-  // draw(){
-  //   image(pipeImg,this.location.x,this.location.y,unit,unit);
-  // }
 }
 
 class Indestructible extends Block {
