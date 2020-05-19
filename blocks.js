@@ -80,6 +80,7 @@ class Mystery extends Block {
   }
 }
 
+//Is the blocks that makes the ground
 class Ground extends Block {
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
@@ -88,6 +89,7 @@ class Ground extends Block {
   }
 }
 
+//The pips that stick up through the map
 class Pipe extends Block {
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
@@ -95,6 +97,7 @@ class Pipe extends Block {
   }
 }
 
+//Indestructible block which makes up the stairs
 class Indestructible extends Block {
   constructor(location, width, height, trueLocation) {
     super(location, width, height, trueLocation);
