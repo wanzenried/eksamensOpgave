@@ -7,13 +7,18 @@ class Player extends PhysicsObject {
     this.rightKey = config.keys.right
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
-    this.jumpAcceleration = unit * (config.jumpAcceleration / 100)
+    this.jumpAcceleration = config.jumpAcceleration
+    this.h = height
   }
 
   update() {
     this.lastLocation = this.location.copy()
 
     this.addForce(gravity);
+    if (keyIsDown(69))
+    this.speed = 0.4
+    else
+    this.speed = config.playerSpeed
 
     if (keyIsDown(this.rightKey)) { // d key
       this.acceleration.x += this.speed
@@ -47,14 +52,12 @@ class Player extends PhysicsObject {
     //floor and back wall detection
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
-      this.velocity.y = 0;
-      this.falling = false;
+      dead = true;
     }
     if (this.location.x < 0) {
       this.location.x = 0
       this.velocity.x = 0
     }
-
     return this;
   }
 
@@ -67,6 +70,10 @@ class Player extends PhysicsObject {
 
   draw() {
     image(playerImg, this.location.x, this.location.y, unit, unit);
+    if (this.location.y + unit < this.h)
+    this.h = this.location.y + unit
+    stroke(0)
+    line(0,this.h,width,this.h)
   }
 
   enviromentDetection() {
@@ -76,7 +83,10 @@ class Player extends PhysicsObject {
     let right;
     for (var i = 0; i < enviroment.length; i++) {
       let t = this.collision(enviroment[i]);
-
+      if(t.object.isTrigger && t.collision){
+        wonGame = true;
+        break;
+      }
       if (t.bottom &&
         blockArray[enviroment[i].trueLocation.x][enviroment[i].trueLocation.y + 1] == false) {
         bottom = t;
@@ -126,11 +136,17 @@ class Player extends PhysicsObject {
         if (t.bottom) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
 
         }
         if (t.left || t.right) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
         }
         break;
       }
@@ -145,12 +161,15 @@ class Player extends PhysicsObject {
         switch (collectibles[i].kind) {
           case "Shroom":
             console.log("U 8 a sHroooom");
+            score += 1000
             break;
           case "1up":
             console.log("U GIT 1 liFe");
+            score += 1000
             break;
           case "StarMan":
             console.log("RUN!!! MAN, RUUNNN!!!");
+            score += 2000
             break;
         }
         collectibles.splice(i, 1)

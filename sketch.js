@@ -7,6 +7,7 @@ let pipeImg;
 let mysteryImg;
 let mysteryEmptyImg;
 let indestructibleImg;
+let flagPoleImg;
 
 function preload() {
   let path = '/config.json';
@@ -23,6 +24,7 @@ function preload() {
   mysteryImg = loadImage("/graphics/mystery.bmp");
   mysteryEmptyImg = loadImage("/graphics/mystery_empty.bmp");
   indestructibleImg = loadImage("/graphics/indestructible.bmp");
+  flagPoleImg = loadImage("/graphics/flagPole.bmp");
 }
 
 
@@ -34,15 +36,30 @@ let collectibles = [];
 let playerLocation;
 let blockArray = [];
 
+let dead = false;
+let wonGame = false;
+let score = 0
+let unit
+let startTime
+
+
 function setup() {
   // put setup code here
   gravity = createVector(0, config.gravity);
   createCanvas(0, 0)
-  windowResized()
+  windowSize()
+  unit = width / 16
   makeLevel()
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
+
+
+  dead = false;
+  wonGame = false;
+
+  dead = false;
+  startTime = millis()
 }
 
 //Update boxes location when sidescrolling
@@ -57,19 +74,23 @@ function updateBlocks(move) {
 
 function draw() {
   // put drawing code here
+
+if(!dead && !wonGame){
+
   background(0, 50, 200);
 
   //stopline
   stroke(255)
   line(unit * 7, 0, unit * 7, height)
   noStroke()
-  player.update().draw();
+  // player.update().draw();
 
   //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
     if (!enviroment[i].broken)
       enviroment[i].draw()
   }
+  player.update().draw();
 
   //Drawes and updates collectibles
   for (var i = 0; i < collectibles.length; i++) {
@@ -82,6 +103,24 @@ function draw() {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
   }
+
+
+  // console.log(millis()-startTime);
+  time = ceil(200 - (millis()-startTime)/1000)
+  fill(255)
+  textSize(unit)
+  text("Score: " + score, unit, unit)
+  text("Time: " + time, 7 * unit, unit)
+
+
+} else if(dead){
+
+  deathScreen();
+} else if(wonGame){
+  wonScreen();
+}
+
+
 }
 
 function keyPressed() {
@@ -89,4 +128,43 @@ function keyPressed() {
   if (keyCode == config.keys.up) {
     player.jump();
   }
+  if (keyCode == 82 && (dead || wonGame)){
+      reset();
+  }
+}
+
+function reset(){
+  hostiles = [];
+  enviroment = [];
+  collectibles = [];
+  blockArray = [];
+  score = 0;
+  setup();
+}
+
+
+
+function deathScreen(){
+  background(0,0,0,15);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+  fill(225,2,31,25);
+  text("YOU  DIED",width/2,height/2);
+  textSize(width/25);
+  fill(95,2,31,25);
+  text("press r to restart", width/2,height/3*2)
+}
+
+function wonScreen(){
+  background(255);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+
+  fill(255,105,180)
+
+  text("WINNER WINNER",width/2,height/2-height/10)
+  text("CHICKEN DINNER", width/2,height/2+height/10)
+  textSize(width/25);
+  fill(95,2,31);
+  text("press r to play again", width/2,height/7*5)
 }

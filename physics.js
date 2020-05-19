@@ -103,7 +103,15 @@ class PhysicsObject {
 
   calculate() {
     this.velocity.add(this.acceleration);
-    this.velocity.limit(this.maxVelocity);
+    if (this.velocity.x < -20)
+    this.velocity.x = -20
+    if (this.velocity.x > 20)
+    this.velocity.x = 20
+    if (this.velocity.y > 30)
+    this.velocity.y = 30
+    if (this.velocity.y < -30)
+    this.velocity.y = -30
+
     if (this.velocity.x < 0.1 && this.velocity.x > -0.1) this.velocity.x = 0
     this.acceleration.mult(0);
   }
