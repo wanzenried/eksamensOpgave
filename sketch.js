@@ -112,10 +112,21 @@ function keyPressed() {
   if (keyCode == config.keys.up) {
     player.jump();
   }
-  if (keyCode == 'r' && dead){
-    
+  if (keyCode == 82 && dead){
+    reset();
   }
 }
+
+function reset(){
+  hostiles = [];
+  enviroment = [];
+  collectibles = [];
+  blockArray = [];
+  dead = false;
+  setup();
+}
+
+
 
 function deathScreen(){
   background(0,0,0,15);
