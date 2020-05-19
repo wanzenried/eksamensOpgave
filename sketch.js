@@ -90,11 +90,14 @@ function draw() {
     if (!enviroment[i].broken)
       enviroment[i].draw()
   }
+
+  //Drawes and updates collectibles
   for (var i = 0; i < collectibles.length; i++) {
     collectibles[i].draw()
     if (collectibles[i].moving)
       collectibles[i].move()
   }
+  //Removes collectibles when the leave the screen
   for (var i = collectibles.length - 1; i > -1; i--) {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)

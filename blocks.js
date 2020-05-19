@@ -14,10 +14,6 @@ class Block {
   }
 
   draw() {
-    // fill(this.color)
-    // noStroke()
-    // square(this.location.x, this.location.y, unit)
-
     image(this.graphic, this.location.x, this.location.y, unit, unit);
 
     //For Mystery blocks ?, makes them if the block have content
@@ -44,15 +40,11 @@ class Brick extends Block {
     this.graphic = brickImg;
   }
 
-  // draw(){
-  //   image(brickImg,this.location.x,this.location.y,unit,unit);
-  // }
-
   //hit get activated in player class
   hit() {
     //Makes sure that small Mario can not break the brick
     if (player.powerUpState != "smallMario") {
-      //Sets the block to be broken. The block will not show and collide
+      //Sets the block to be broken. The block will not be drawed or collide
       this.broken = true
     }
   }
@@ -71,7 +63,7 @@ class Mystery extends Block {
 
   //hit get activated in player class
   hit() {
-    //
+    //The block does different things when hit depending on the content
     switch (this.content) {
       case "coin":
         console.log("coin");
