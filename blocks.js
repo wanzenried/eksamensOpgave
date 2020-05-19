@@ -108,3 +108,14 @@ class Indestructible extends Block {
     this.graphic = indestructibleImg;
   }
 }
+
+class FlagPole extends Block {
+
+  constructor(location,width,height,trueLocation){
+    super(location,width,height,trueLocation);
+
+  }
+  draw(){
+    
+  }
+}

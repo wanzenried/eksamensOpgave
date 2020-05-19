@@ -24,7 +24,7 @@ function makeLevel() {
           break;
         case groundColour:
           enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
-          
+
           blockArray[i][j] = true;
 
           break;
@@ -65,7 +65,7 @@ function makeLevel() {
 
           break;
         case flagColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new FlagPole(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
           blockArray[i][j] = true;
 
           break;
