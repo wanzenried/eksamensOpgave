@@ -37,6 +37,7 @@ let playerLocation;
 let blockArray = [];
 
 let dead = false;
+let wonGame = false;
 let score = 0
 let unit
 
@@ -53,6 +54,7 @@ function setup() {
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
 
   dead = false;
+  wonGame = false;
 
 }
 
@@ -69,7 +71,7 @@ function updateBlocks(move) {
 function draw() {
   // put drawing code here
 
-if(!dead){
+if(!dead && !wonGame){
 
   background(0, 50, 200);
 
@@ -98,8 +100,11 @@ if(!dead){
     collectibles.splice(i,1)
   }
 
-} else{
+
+} else if(dead){
   deathScreen();
+} else if(wonGame){
+  wonScreen();
 }
 
 
@@ -110,8 +115,8 @@ function keyPressed() {
   if (keyCode == config.keys.up) {
     player.jump();
   }
-  if (keyCode == 82 && dead){
-    reset();
+  if (keyCode == 82 && (dead || wonGame)){
+      reset();
   }
 }
 
@@ -135,4 +140,18 @@ function deathScreen(){
   textSize(width/25);
   fill(95,2,31,25);
   text("press r to restart", width/2,height/3*2)
+}
+
+function wonScreen(){
+  background(255);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+
+  fill(255,105,180)
+
+  text("WINNER WINNER",width/2,height/2-height/10)
+  text("CHICKEN DINNER", width/2,height/2+height/10)
+  textSize(width/25);
+  fill(95,2,31);
+  text("press r to play again", width/2,height/7*5)
 }

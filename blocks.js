@@ -127,7 +127,6 @@ class WinTrigger extends Block {
     super(location,width,height,trueLocation);
     this.isTrigger = true;
   }
-  }
   draw(){
     return
   }

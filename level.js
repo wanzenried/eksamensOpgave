@@ -11,6 +11,7 @@ function makeLevel() {
   let koopaColour = 200;
   let pipeColour = 225;
   let flagColour = 250;
+  let triggerColour = 90;
 
   for (var i = 0; i < level.width; i++) {
     blockArray[i] = [];
@@ -69,6 +70,10 @@ function makeLevel() {
           blockArray[i][j] = true;
 
           break;
+          case triggerColour:
+          enviroment.push(new WinTrigger(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+
+            break;
 
       }
 
