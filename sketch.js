@@ -37,6 +37,7 @@ let blockArray = [];
 let dead = false;
 let score = 0
 let unit
+let startTime
 
 
 function setup() {
@@ -49,9 +50,9 @@ function setup() {
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
-  
-  dead = false;
 
+  dead = false;
+  startTime = millis()
 }
 
 //Update boxes location when sidescrolling
@@ -94,6 +95,13 @@ if(!dead){
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
   }
+
+  // console.log(millis()-startTime);
+  time = ceil(200 - (millis()-startTime)/1000)
+  fill(255)
+  textSize(unit)
+  text("Score: " + score, unit, unit)
+  text("Time: " + time, 7 * unit, unit)
 
 } else{
   deathScreen();
