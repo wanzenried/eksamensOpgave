@@ -131,3 +131,16 @@ class WinTrigger extends Block {
     return
   }
 }
+
+class ControlsBlock extends Block {
+  constructor(location,width,height,trueLocation){
+    super(location,width,height,trueLocation);
+
+  }
+  draw(){
+    textAlign(LEFT,TOP);
+    textSize(20);
+    fill(0);
+    text("Use A and D to move sideways\nPress space to jump", this.location.x,this.location.y);
+  }
+}

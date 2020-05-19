@@ -12,6 +12,7 @@ function makeLevel() {
   let pipeColour = 225;
   let flagColour = 250;
   let triggerColour = 90;
+  let controlColour = 10;
 
   for (var i = 0; i < level.width; i++) {
     blockArray[i] = [];
@@ -24,33 +25,33 @@ function makeLevel() {
           playerLocation = createVector(i * unit, j * unit);
           break;
         case groundColour:
-          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
 
           blockArray[i][j] = true;
 
           break;
         case brickColour:
-          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new Brick(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
         case indestructibleColour:
-          enviroment.push(new Indestructible(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new Indestructible(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
         case mystery1Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit,"coin",createVector(i,j)));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "coin", createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
         case mystery2Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "Shroom",createVector(i,j)));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "Shroom", createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
         case mystery3Colour:
-          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "StarMan",createVector(i,j)));
+          enviroment.push(new Mystery(createVector(i * unit, j * unit), unit, unit, "StarMan", createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
@@ -61,19 +62,23 @@ function makeLevel() {
 
           break;
         case pipeColour:
-          enviroment.push(new Pipe(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new Pipe(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
         case flagColour:
-          enviroment.push(new FlagPole(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+          enviroment.push(new FlagPole(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
           blockArray[i][j] = true;
 
           break;
-          case triggerColour:
-          enviroment.push(new WinTrigger(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
+        case triggerColour:
+          enviroment.push(new WinTrigger(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
 
-            break;
+          break;
+        case controlColour:
+          enviroment.push(new ControlsBlock(createVector(i * unit, j * unit), unit, unit, createVector(i, j)));
+
+          break;
 
       }
 
