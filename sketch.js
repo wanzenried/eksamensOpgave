@@ -79,12 +79,6 @@ if(!dead && !wonGame){
 
   background(0, 50, 200);
 
-  //stopline
-  stroke(255)
-  line(unit * 7, 0, unit * 7, height)
-  noStroke()
-  // player.update().draw();
-
   //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
     if (!enviroment[i].broken)
