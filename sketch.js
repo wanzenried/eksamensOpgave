@@ -34,8 +34,8 @@ let collectibles = [];
 let playerLocation;
 let blockArray = [];
 
+let dead = false;
 let score = 0
-
 let unit
 
 
@@ -49,6 +49,9 @@ function setup() {
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
+  
+  dead = false;
+
 }
 
 //Update boxes location when sidescrolling
@@ -63,6 +66,9 @@ function updateBlocks(move) {
 
 function draw() {
   // put drawing code here
+
+if(!dead){
+
   background(0, 50, 200);
 
   //stopline
@@ -88,6 +94,12 @@ function draw() {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
   }
+
+} else{
+  deathScreen();
+}
+
+
 }
 
 function keyPressed() {
@@ -95,4 +107,29 @@ function keyPressed() {
   if (keyCode == config.keys.up) {
     player.jump();
   }
+  if (keyCode == 82 && dead){
+    reset();
+  }
+}
+
+function reset(){
+  hostiles = [];
+  enviroment = [];
+  collectibles = [];
+  blockArray = [];
+  score = 0;
+  setup();
+}
+
+
+
+function deathScreen(){
+  background(0,0,0,15);
+  textSize(width/10);
+  textAlign(CENTER,CENTER);
+  fill(225,2,31,25);
+  text("YOU  DIED",width/2,height/2);
+  textSize(width/25);
+  fill(95,2,31,25);
+  text("press r to restart", width/2,height/3*2)
 }

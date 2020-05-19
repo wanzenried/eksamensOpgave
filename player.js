@@ -47,8 +47,7 @@ class Player extends PhysicsObject {
     //floor and back wall detection
     if (this.location.y > height - this.height) {
       this.location.y = height - this.height;
-      this.velocity.y = 0;
-      this.falling = false;
+      dead = true;
     }
     if (this.location.x < 0) {
       this.location.x = 0
@@ -131,11 +130,17 @@ class Player extends PhysicsObject {
         if (t.bottom) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
 
         }
         if (t.left || t.right) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
         }
         break;
       }
