@@ -113,9 +113,11 @@ class FlagPole extends Block {
 
   constructor(location,width,height,trueLocation){
     super(location,width,height,trueLocation);
+    this.graphic = flagPoleImg;
 
   }
   draw(){
-    
+    image(this.graphic,this.location.x,this.location.y-6*unit,unit*2,unit*7);
+
   }
 }

@@ -7,6 +7,7 @@ let pipeImg;
 let mysteryImg;
 let mysteryEmptyImg;
 let indestructibleImg;
+let flagPoleImg;
 
 function preload() {
   let path = '/config.json';
@@ -23,6 +24,7 @@ function preload() {
   mysteryImg = loadImage("/graphics/mystery.bmp");
   mysteryEmptyImg = loadImage("/graphics/mystery_empty.bmp");
   indestructibleImg = loadImage("/graphics/indestructible.bmp");
+  flagPoleImg = loadImage("/graphics/flagPole.bmp");
 }
 
 
@@ -49,7 +51,7 @@ function setup() {
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
-  
+
   dead = false;
 
 }
@@ -75,13 +77,14 @@ if(!dead){
   stroke(255)
   line(unit * 7, 0, unit * 7, height)
   noStroke()
-  player.update().draw();
+  // player.update().draw();
 
   //Draw boxes
   for (var i = 0; i < enviroment.length; i++) {
     if (!enviroment[i].broken)
       enviroment[i].draw()
   }
+  player.update().draw();
 
   //Drawes and updates collectibles
   for (var i = 0; i < collectibles.length; i++) {
