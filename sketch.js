@@ -33,6 +33,7 @@ let enviroment = [];
 let collectibles = [];
 let playerLocation;
 let blockArray = [];
+let unit
 
 // let sliders = [];
 
@@ -40,7 +41,8 @@ function setup() {
   // put setup code here
   gravity = createVector(0, config.gravity);
   createCanvas(0, 0)
-  windowResized()
+  windowSize()
+  unit = width / 16
   makeLevel()
   // for (var i = 0; i < 3; i++) {
   //   sliders[i] = createSlider(60,70,0);
