@@ -15,9 +15,9 @@ class Collectible extends PhysicsObject {
     this.broken = false
   }
 
+  //Draws a placeholder circle with the color of the collectible
   draw() {
     fill(this.color)
-    // fill(255)
     noStroke()
     circle(this.location.x + this.width / 2, this.location.y + this.width / 2, this.width)
   }
@@ -82,6 +82,7 @@ class Shroom extends Collectible {
     this.moving = true
     this.color = color("brown")
     this.kind = "Shroom"
+    this.moving = false
   }
 }
 
