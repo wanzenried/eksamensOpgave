@@ -130,11 +130,17 @@ class Player extends PhysicsObject {
         if (t.bottom) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
 
         }
         if (t.left || t.right) {
           // damage the player
           console.log("player takes damage");
+          if(powerUpState == "smallMario"){
+            dead = true;
+          }
         }
         break;
       }

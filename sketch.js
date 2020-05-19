@@ -63,6 +63,7 @@ function setup() {
     else
       enviroment[i] = new Mystery(createVector((3) * unit, i * unit), unit, unit)
   }*/
+  dead = false;
 }
 
 //Update boxes location when sidescrolling
@@ -122,7 +123,6 @@ function reset(){
   enviroment = [];
   collectibles = [];
   blockArray = [];
-  dead = false;
   setup();
 }
 
