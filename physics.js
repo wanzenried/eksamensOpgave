@@ -10,6 +10,7 @@ class PhysicsObject {
     this.velocity = createVector(0, 0);
     this.maxVelocity = maxVelocity;
     this.falling = false;
+    this.broken = false
 
   }
   collision(object) {

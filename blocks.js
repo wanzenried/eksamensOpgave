@@ -8,9 +8,6 @@ class Block {
     this.height = height
     //The true location in level 2D array
     this.trueLocation = trueLocation;
-
-    //Boolean for if the block is broken. If true makes the block invisible and non-collidable
-    this.broken = false
   }
 
   draw() {

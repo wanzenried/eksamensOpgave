@@ -24,7 +24,7 @@ function makeLevel() {
           break;
         case groundColour:
           enviroment.push(new Ground(createVector(i * unit, j * unit), unit, unit,createVector(i,j)));
-          
+
           blockArray[i][j] = true;
 
           break;
@@ -54,7 +54,7 @@ function makeLevel() {
 
           break;
         case goombaColour:
-
+        hostiles.push(new Goomba(createVector(i * unit, j * unit), unit, unit))
           break;
         case koopaColour:
 

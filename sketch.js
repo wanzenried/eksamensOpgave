@@ -7,6 +7,7 @@ let pipeImg;
 let mysteryImg;
 let mysteryEmptyImg;
 let indestructibleImg;
+let goombaImg;
 
 function preload() {
   let path = '/config.json';
@@ -23,6 +24,7 @@ function preload() {
   mysteryImg = loadImage("/graphics/mystery.bmp");
   mysteryEmptyImg = loadImage("/graphics/mystery_empty.bmp");
   indestructibleImg = loadImage("/graphics/indestructible.bmp");
+  goombaImg = loadImage("/graphics/goomba.bmp")
 }
 
 
@@ -49,9 +51,8 @@ function setup() {
 
   //define new player
   player = new Player(playerLocation, unit, unit, config.playerSpeed, config.playerMaxVelocity);
-  
   dead = false;
-
+console.log(hostiles);
 }
 
 //Update boxes location when sidescrolling
@@ -70,7 +71,7 @@ function draw() {
 if(!dead){
 
   background(0, 50, 200);
-
+  image(goombaImg, 0,0,unit,unit)
   //stopline
   stroke(255)
   line(unit * 7, 0, unit * 7, height)
@@ -93,6 +94,10 @@ if(!dead){
   for (var i = collectibles.length - 1; i > -1; i--) {
     if (collectibles[i].location.x < -collectibles[i].width || collectibles[i].location.y > height)
     collectibles.splice(i,1)
+  }
+// console.log(hostiles.length, hostiles);
+  for (var i = 0; i < hostiles.length; i++) {
+    hostiles[i].draw()
   }
 
 } else{

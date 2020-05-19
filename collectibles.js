@@ -11,8 +11,6 @@ class Collectible extends PhysicsObject {
     this.moving = false
     //The acceleration of powerups
     this.acceleration.x = 2
-    //The broken feature from blocks
-    this.broken = false
   }
 
   //Draws a placeholder circle with the color of the collectible
