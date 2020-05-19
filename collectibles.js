@@ -22,20 +22,22 @@ class Collectible extends PhysicsObject {
     circle(this.location.x + this.width / 2, this.location.y + this.width / 2, this.width)
   }
 
+  //If the powerup moves. Functions addForce and calculate are found in physics.js
   move() {
     this.lastLocation = this.location.copy()
     this.addForce(gravity)
     this.calculate()
     this.location.add(this.velocity)
-    // this.velocity.mult(0)
     this.enviromentDetection();
   }
 
+  //enviromentDetection() makes sure that the powerup collides with the ground and walls in the right way
   enviromentDetection() {
     let top;
     let bottom;
     let left;
     let right;
+    //Checks each powerup to all enviroment
     for (var i = 0; i < enviroment.length; i++) {
       let t = this.collision(enviroment[i]);
 
@@ -76,16 +78,17 @@ class Collectible extends PhysicsObject {
   }
 }
 
+//The sub class for magic mushrooms
 class Shroom extends Collectible {
   constructor(location, width, height) {
     super(location, width, height)
     this.moving = true
     this.color = color("brown")
     this.kind = "Shroom"
-    this.moving = false
   }
 }
 
+//The sub class for 1 life up mushrooms
 class OneUp extends Collectible {
   constructor(location, width, height) {
     super(location, width, height)
@@ -95,6 +98,7 @@ class OneUp extends Collectible {
   }
 }
 
+//The sub class for Starmen
 class StarMan extends Collectible {
   constructor(location, width, height) {
     super(location, width, height)
