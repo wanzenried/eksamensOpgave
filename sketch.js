@@ -33,7 +33,11 @@ let enviroment = [];
 let collectibles = [];
 let playerLocation;
 let blockArray = [];
+
+let score = 0
+
 let unit
+
 
 function setup() {
   // put setup code here
