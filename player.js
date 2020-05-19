@@ -8,6 +8,7 @@ class Player extends PhysicsObject {
     this.leftKey = config.keys.left
     this.playerFriction = config.playerFriction
     this.jumpAcceleration = config.jumpAcceleration
+    this.h = height
   }
 
   update() {
@@ -71,6 +72,10 @@ class Player extends PhysicsObject {
     // fill(255, 0, 0);
     // rect(this.location.x, this.location.y, this.width, this.height);
     image(playerImg, this.location.x, this.location.y, unit, unit);
+    if (this.location.y + unit < this.h)
+    this.h = this.location.y + unit
+    stroke(0)
+    line(0,this.h,width,this.h)
   }
 
   enviromentDetection() {
